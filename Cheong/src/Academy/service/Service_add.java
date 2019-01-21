@@ -26,12 +26,5 @@ public class Service_add {
 		} finally {
 			DBResourceReturn.close(conn);
 		}
-		
-		
 	}
-	
-
-	
-	
-	
 }
