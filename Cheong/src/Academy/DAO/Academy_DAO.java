@@ -35,7 +35,6 @@ public class Academy_DAO {
 	// 이름 . 생년월일. 전화번호. 주소. 전공. 단과반유무. 조공횟수. 성적. 출석. 설문조사
 	// name. birth. tel. address. major. itcourse. tribute. database. java. javascript. jsp, attendance. survey				
 	// 외부 테이블이 존재하는 항목 : attend 				
-					
 		} finally {
 			DBResourceReturn.close(pstmt);
 		}
