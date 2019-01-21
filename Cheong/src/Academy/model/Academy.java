@@ -10,24 +10,63 @@ public class Academy {
 	private String major;
 	private String itcourse;
 	private int tribute;	// String으로 변경할 수도 ... 품목을 적는다면 0ㅁ 0
-	private int scores;
-	private int attend;
+	private int databaseScore;
+	private int JavaScore;
+	private int JavascriptScore;
+	private int JspScore;
+	private int attendance;
 	private String survey;
 	
+
+	
+	
 	public Academy() { }
-	public Academy(String name, String birth, String tel, String address, String itcourse, int tribute, int scores, int attend, String survey) {
+	public Academy(String name, String birth, String tel, String address, String itcourse, int tribute, int database, int java,int script, int jsp, int attendance, String survey) {
 		this.name = name;
 		this.birth = birth;
 		this.tel = tel;
 		this.address = address;
 		this.itcourse = itcourse;
 		this.tribute = tribute;
-		this.scores = scores;
-		this.attend = attend;
+		this.databaseScore = database;
+		this.JavaScore = java;
+		this.JavascriptScore = script;
+		this.JspScore = jsp;
+		this.attendance = attendance;
 		this.survey = survey;
 	}
 	
 	
+	public int getDatabaseScore() {
+		return databaseScore;
+	}
+	public void setDatabaseScore(int databaseScore) {
+		this.databaseScore = databaseScore;
+	}
+	public int getJavaScore() {
+		return JavaScore;
+	}
+	public void setJavaScore(int javaScore) {
+		JavaScore = javaScore;
+	}
+	public int getJavascriptScore() {
+		return JavascriptScore;
+	}
+	public void setJavascriptScore(int javascriptScore) {
+		JavascriptScore = javascriptScore;
+	}
+	public int getJspScore() {
+		return JspScore;
+	}
+	public void setJspScore(int jspScore) {
+		JspScore = jspScore;
+	}
+	public int getAttendance() {
+		return attendance;
+	}
+	public void setAttendance(int attendance) {
+		this.attendance = attendance;
+	}
 	public String getName() {
 		return name;
 	}
@@ -69,18 +108,6 @@ public class Academy {
 	}
 	public void setTribute(int tribute) {
 		this.tribute = tribute;
-	}
-	public int getScores() {
-		return scores;
-	}
-	public void setScores(int scores) {
-		this.scores = scores;
-	}
-	public int getAttend() {
-		return attend;
-	}
-	public void setAttend(int attend) {
-		this.attend = attend;
 	}
 	public String getSurvey() {
 		return survey;
