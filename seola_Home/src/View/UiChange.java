@@ -12,6 +12,7 @@ public class UiChange  extends JFrame{
 	public UiPanel02 uipanel02 = null;
 	public UiPanel03 uipanel03 = null;
 	public UiPanel04 uipanel04 = null;
+	public TextPanel01 uipanel01_01 = null;
 	
 	
 	static Toolkit tk = Toolkit.getDefaultToolkit();
@@ -39,6 +40,10 @@ public class UiChange  extends JFrame{
 			getContentPane().add(uipanel04);
 			revalidate();
 			repaint();
+		}else if(panelName.equals("uipanel01_01")) {
+			getContentPane().removeAll();
+			getContentPane().add(uipanel01_01);
+			revalidate();
 		}
 		
 	}
@@ -52,11 +57,12 @@ public class UiChange  extends JFrame{
 		int f_xpos = (int) (screen.getWidth() / 2 - f_width / 2);
 		int f_ypos = (int) (screen.getHeight() / 2 - f_height / 2);
 		win.setLocation(f_xpos, f_ypos);
-		win.setTitle("dd");
+		win.setTitle("학생정보");
 		win.uipanel01 = new UiPanel01(win);
 		win.uipanel02 = new UiPanel02(win);
 		win.uipanel03 = new UiPanel03(win);
 		win.uipanel04 = new UiPanel04(win);
+		
 		
 		win.add(win.uipanel01);
 		win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

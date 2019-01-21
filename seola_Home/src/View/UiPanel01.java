@@ -18,8 +18,10 @@ import model.Academy;
 
 
 public class UiPanel01 extends JPanel {
+	
 	private JPanel panel01 = new MyPanel01();
 	private UiChange  win;
+	private TextPanel01 textpanel = null;
 	private JButton menu1 ;
 	private JButton menu2 ;
 	private JButton menu3 ;
@@ -128,18 +130,22 @@ public class UiPanel01 extends JPanel {
 			}
 			else if (e.getSource() == change_bt) {
 				panel01.remove(change_bt);
-				panel01.add(add_bt);
-				TextPanel01 textpanel = new TextPanel01();
-				add(textpanel);
-				textpanel.setSize(500,500);
-				
+				textpanel = new TextPanel01();
+				panel01.add(textpanel.panel02);
+				textpanel.panel02.setSize(515, 257);
+				textpanel.panel02.setLocation(223,8);
+				textpanel.panel02.add(add_bt);
+				add_bt.setLocation(205,183);
+	
 			}
 			else if(e.getSource() == add_bt) {
-				panel01.remove(add_bt);
+				textpanel.panel02.remove(add_bt);
+				panel01.remove(textpanel.panel02);
 				panel01.add(change_bt);
 				win.change("uipanel01");
+		
+				
 				Academy academy = new Academy();
-				TextPanel01 textpanel = new TextPanel01();
 				academy.setName(textpanel.nameTextField.getText());
 				academy.setBirth(textpanel.birthTextField.getText());
 				academy.setTel(textpanel.telTextField.getText());
@@ -154,6 +160,8 @@ public class UiPanel01 extends JPanel {
 }
 
 class TextPanel01	extends JPanel{
+	private UiChange  win;
+	MyPanel02 panel02 = new  MyPanel02();
 	JTextField nameTextField;
 	JTextField birthTextField;
 	JTextField telTextField;
@@ -161,32 +169,46 @@ class TextPanel01	extends JPanel{
 	
 	
 	public TextPanel01() {
-	setSize(500, 200);
-	setLocation(230,30);
+	
+	setSize(515, 257);
+	setLocation(223,8);
 	setVisible(true);
 	setLayout(null);
 	
+	panel02.setSize(515,257);
+	panel02.setLocation(0,00);
+	add(panel02);
+	
+	
 	nameTextField =  new JTextField();
-	add(nameTextField);
+	panel02.add(nameTextField);
 	nameTextField.setSize(102,55);
 	nameTextField.setLocation(8,85);
 	
 	birthTextField =  new JTextField();
-	add(birthTextField);
+	panel02.add(birthTextField);
 	birthTextField.setSize(102,55);
 	birthTextField.setLocation(133,85);
 	
 	telTextField =  new JTextField();
-	add(telTextField);
+	panel02.add(telTextField);
 	telTextField.setSize(105,80);
 	telTextField.setLocation(270,60);
 	
 	
 	addressTextField =  new JTextField();
-	add(addressTextField);
+	panel02.add(addressTextField);
 	addressTextField.setSize(100,80);
 	addressTextField.setLocation(390,60);
 	
+	}
+	
+	class MyPanel02 extends JPanel {
+		@Override
+		protected void paintComponent(Graphics g) {
+			Image img = new ImageIcon("img\\UI01_1_change1.png").getImage();
+			g.drawImage(img, 0, 0, 515, 257, null);
+		}
 	}
 	
 }
