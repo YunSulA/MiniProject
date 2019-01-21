@@ -20,7 +20,7 @@ public class Service_add {
 		try {
 			conn = DBConnection.getConn();
 			Academy_DAO academyDao = Academy_DAO.getInstance();
-			academyDao.addDAO(conn, academy);
+			academyDao.addDao(conn, academy);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
