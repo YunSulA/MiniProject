@@ -40,6 +40,18 @@ public class Academy_DAO {
 			DBResourceReturn.close(pstmt);
 		}
 	}
+	
+	public int remove(Connection conn, Academy academy) throws SQLException {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement("DELETE FROM ACADEMY WHERE TEL =?");
+			pstmt.setString(1, /* 지우고싶은 학생의 전화번호를 받아서 이부분에 입력. */  );
+			return pstmt.executeUpdate();
+		} finally {
+			DBResourceReturn.close(pstmt);
+		}
+	}
+	
 	// 일단 다른 방법이 생각나지 않아서 항목별로 전부다 change메소드를 따로 작성하기로 했다.
 	/* 	private String name;
 		private String birth;
@@ -211,6 +223,7 @@ public class Academy_DAO {
 			DBResourceReturn.close(pstmt);
 		}
 	}
+
 	
 	
 }

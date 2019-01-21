@@ -17,9 +17,6 @@ public class Academy {
 	private int attendance;
 	private String survey;
 	
-
-	
-	
 	public Academy() { }
 	public Academy(String name, String birth, String tel, String address, String itcourse, int tribute, int database, int java,int script, int jsp, int attendance, String survey) {
 		this.name = name;
