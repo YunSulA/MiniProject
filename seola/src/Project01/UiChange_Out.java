@@ -18,7 +18,6 @@ public class UiChange_Out  implements WindowListener {
 	
 	
 	public UiChange_Out() {
-		
 	 
 		win = new UiChange();
 		

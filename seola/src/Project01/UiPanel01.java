@@ -74,14 +74,16 @@ public class UiPanel01 extends JPanel {
 		menu3.addActionListener(new MyActionListener());
 		menu4.addActionListener(new MyActionListener());
 		
+		
 		change_bt = new JButton();
 		change_bt.setBounds(390, 210, 50, 30);
 		panel01.add(change_bt);
+		change_bt.addActionListener(new MyActionListener());
 		
-		TextPanel01 textpanel = new TextPanel01();
-		add(textpanel);
-		textpanel.setSize(500,500);
-		textpanel.setVisible(true);
+//		TextPanel01 textpanel = new TextPanel01();
+//		add(textpanel);
+//		textpanel.setSize(500,250);
+//		textpanel.setVisible(true);
 				
 	}
 
@@ -108,14 +110,16 @@ public class UiPanel01 extends JPanel {
 			else if (e.getSource() == menu4) {
 				win.change("uipanel04");
 			}
-			
-			if (e.getSource() == change_bt) {
-				remove(change_bt);
+			else if (e.getSource() == change_bt) {
+				System.out.println("Àû¿ë");
+				panel01.remove(change_bt);
 				TextPanel01 textpanel = new TextPanel01();
 				add(textpanel);
-				textpanel.setBounds(0,0,500,200);
+				textpanel.setSize(500,500);
 				textpanel.setVisible(true);
 			}
+			
+			
 		}
 
 	}
@@ -144,19 +148,19 @@ class TextPanel01	extends JPanel{
 	
 	JTextField birthTextField =  new JTextField();
 	add(birthTextField);
-	birthTextField.setSize(100,50);
-	birthTextField.setLocation(140,90);
+	birthTextField.setSize(110,50);
+	birthTextField.setLocation(135,90);
 	
 	JTextField telTextField =  new JTextField();
 	add(telTextField);
-	telTextField.setSize(100,50);
-	telTextField.setLocation(270,90);
+	telTextField.setSize(105,80);
+	telTextField.setLocation(270,60);
 	
 	
 	JTextField addressTextField =  new JTextField();
 	add(addressTextField);
-	addressTextField.setSize(100,50);
-	addressTextField.setLocation(390,90);
+	addressTextField.setSize(100,80);
+	addressTextField.setLocation(390,70);
 	
 	}
 	
