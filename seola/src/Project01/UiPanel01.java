@@ -1,6 +1,7 @@
 package Project01;
 
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -9,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import Project01.UiPanel03.MyActionListener;
 
@@ -21,9 +23,10 @@ public class UiPanel01 extends JPanel {
 	private JButton menu2 ;
 	private JButton menu3 ;
 	private JButton menu4 ;
+	private JButton change_bt;
 	
 	
-	Image background[] = { new ImageIcon("C:\\mini\\UI.png").getImage(), new ImageIcon("img\\UI01.png").getImage(),
+	Image background[] = { new ImageIcon("C:\\mini\\UI.png").getImage(), new ImageIcon("img\\UI01_1.png").getImage(),
 			new ImageIcon("img\\UI02.png").getImage(), };
 
 	public UiPanel01(UiChange win) {
@@ -70,12 +73,22 @@ public class UiPanel01 extends JPanel {
 		menu2.addActionListener(new MyActionListener());
 		menu3.addActionListener(new MyActionListener());
 		menu4.addActionListener(new MyActionListener());
+		
+		change_bt = new JButton();
+		change_bt.setBounds(390, 210, 50, 30);
+		panel01.add(change_bt);
+		
+		TextPanel01 textpanel = new TextPanel01();
+		add(textpanel);
+		textpanel.setSize(500,500);
+		textpanel.setVisible(true);
+				
 	}
 
 	class MyPanel01 extends JPanel {
 		@Override
 		protected void paintComponent(Graphics g) {
-			Image img = new ImageIcon("img\\UI01.png").getImage();
+			Image img = new ImageIcon("img\\UI01_1.png").getImage();
 			g.drawImage(img, 0, 0, 750, 500, null);
 		}
 	}
@@ -95,6 +108,14 @@ public class UiPanel01 extends JPanel {
 			else if (e.getSource() == menu4) {
 				win.change("uipanel04");
 			}
+			
+			if (e.getSource() == change_bt) {
+				remove(change_bt);
+				TextPanel01 textpanel = new TextPanel01();
+				add(textpanel);
+				textpanel.setBounds(0,0,500,200);
+				textpanel.setVisible(true);
+			}
 		}
 
 	}
@@ -106,4 +127,37 @@ public class UiPanel01 extends JPanel {
 //		win.add(e);
 //	}
 
+}
+
+class TextPanel01	extends JPanel{
+	
+	public TextPanel01() {
+	setSize(500, 200);
+	setLocation(230,30);
+	setVisible(true);
+	setLayout(null);
+	
+	JTextField nameTextField =  new JTextField();
+	add(nameTextField);
+	nameTextField.setSize(100,50);
+	nameTextField.setLocation(10,90);
+	
+	JTextField birthTextField =  new JTextField();
+	add(birthTextField);
+	birthTextField.setSize(100,50);
+	birthTextField.setLocation(140,90);
+	
+	JTextField telTextField =  new JTextField();
+	add(telTextField);
+	telTextField.setSize(100,50);
+	telTextField.setLocation(270,90);
+	
+	
+	JTextField addressTextField =  new JTextField();
+	add(addressTextField);
+	addressTextField.setSize(100,50);
+	addressTextField.setLocation(390,90);
+	
+	}
+	
 }

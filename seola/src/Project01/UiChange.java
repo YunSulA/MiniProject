@@ -13,6 +13,7 @@ public class UiChange  extends JFrame{
 	public UiPanel03 uipanel03 = null;
 	public UiPanel04 uipanel04 = null;
 	
+	
 	static Toolkit tk = Toolkit.getDefaultToolkit();
 	static int f_width = 750;
 	static int f_height = 539;
