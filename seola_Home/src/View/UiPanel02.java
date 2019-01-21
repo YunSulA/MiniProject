@@ -1,4 +1,4 @@
-package Project01;
+package View;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import Project01.UiPanel03.MyActionListener;
+import View.UiPanel03.MyActionListener;
 
 
 

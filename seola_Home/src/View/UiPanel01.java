@@ -1,4 +1,4 @@
-package Project01;
+package View;
 
 
 import java.awt.BorderLayout;
@@ -12,7 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Project01.UiPanel03.MyActionListener;
+import View.UiPanel03.MyActionListener;
+import model.Academy;
 
 
 
@@ -95,7 +96,6 @@ public class UiPanel01 extends JPanel {
 		add_bt = new JButton(ui_bt[2]);
 		add_bt.setBounds(430, 190, 75, 43);
 		add_bt.setContentAreaFilled(false);// 버튼 내용영역 안채움
-		//change_bt.setFocusPainted(false);
 		add_bt.setBorderPainted(false);
 		add_bt.setRolloverEnabled(true);
 		add_bt.setRolloverIcon(ui_bt[3]);
@@ -138,23 +138,27 @@ public class UiPanel01 extends JPanel {
 				panel01.remove(add_bt);
 				panel01.add(change_bt);
 				win.change("uipanel01");
+				Academy academy = new Academy();
+				TextPanel01 textpanel = new TextPanel01();
+				academy.setName(textpanel.nameTextField.getText());
+				academy.setBirth(textpanel.birthTextField.getText());
+				academy.setTel(textpanel.telTextField.getText());
+				academy.setAddress(textpanel.addressTextField.getText());
 			}
 			
 			
 		}
 
 	}
-//	public static void main(String[] args) {
-//		UiPanel01 e = new UiPanel01(win);
-//		win.setTitle("test");
-//		win.setSize(750,540);
-//		win.setVisible(true);
-//		win.add(e);
-//	}
 
 }
 
 class TextPanel01	extends JPanel{
+	JTextField nameTextField;
+	JTextField birthTextField;
+	JTextField telTextField;
+	JTextField addressTextField;
+	
 	
 	public TextPanel01() {
 	setSize(500, 200);
@@ -162,23 +166,23 @@ class TextPanel01	extends JPanel{
 	setVisible(true);
 	setLayout(null);
 	
-	JTextField nameTextField =  new JTextField();
+	nameTextField =  new JTextField();
 	add(nameTextField);
 	nameTextField.setSize(102,55);
 	nameTextField.setLocation(8,85);
 	
-	JTextField birthTextField =  new JTextField();
+	birthTextField =  new JTextField();
 	add(birthTextField);
 	birthTextField.setSize(102,55);
 	birthTextField.setLocation(133,85);
 	
-	JTextField telTextField =  new JTextField();
+	telTextField =  new JTextField();
 	add(telTextField);
 	telTextField.setSize(105,80);
 	telTextField.setLocation(270,60);
 	
 	
-	JTextField addressTextField =  new JTextField();
+	addressTextField =  new JTextField();
 	add(addressTextField);
 	addressTextField.setSize(100,80);
 	addressTextField.setLocation(390,60);

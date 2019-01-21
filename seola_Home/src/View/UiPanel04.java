@@ -1,4 +1,4 @@
-package Project01;
+package View;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import Project01.UiPanel01.MyActionListener;
+import View.UiPanel01.MyActionListener;
 
 public class UiPanel04 extends JPanel {
 	private JPanel panel04 = new MyPanel04();
