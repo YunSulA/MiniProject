@@ -38,10 +38,5 @@ public class Academy_DAO {
 		} finally {
 			DBResourceReturn.close(pstmt);
 		}
-		
-		
 	}
-	
-	
-	
 }
