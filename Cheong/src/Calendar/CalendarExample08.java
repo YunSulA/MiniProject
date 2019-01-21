@@ -9,7 +9,9 @@ public class CalendarExample08 {
 	   int year = today.get(Calendar.YEAR);
 	   int month = today.get(Calendar.MONTH)+1;
 	// int year = 1992;
-    //  int month = 1;
+    // int month = 1;
+	   
+	   
       Calendar startDay = Calendar.getInstance();
       Calendar endDay = Calendar.getInstance();
       Calendar endDay2 = Calendar.getInstance();
