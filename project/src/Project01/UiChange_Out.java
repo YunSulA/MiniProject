@@ -49,7 +49,7 @@ public class UiChange_Out  implements WindowListener {
 	}
 	@Override
 	public void windowClosed(WindowEvent e) {
-		ButtonFinal01.move2();
+		Button01.move2();
 		
 	}
 	@Override

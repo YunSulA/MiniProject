@@ -17,7 +17,7 @@ import javax.swing.SwingUtilities;
 /* 버튼이 움직이면 버튼안의 이미지가 바뀜
  * 
  */
-public class ButtonFinal01 extends JButton implements ActionListener {
+public class Button01 extends JButton implements ActionListener {
 
 	static ImageIcon[] img = { new ImageIcon("img//Guhyup_charback.png"),
 			new ImageIcon("img//Guhyup_charback_walk1.png"), new ImageIcon("img//Guhyup_charback_walk2.png"),
@@ -37,7 +37,7 @@ public class ButtonFinal01 extends JButton implements ActionListener {
 	UiChange_Out ui_unit;
 	
 	
-	public ButtonFinal01() {
+	public Button01() {
 		//setLayout(null);
 		x = 400;
 		y = 400;
@@ -45,23 +45,20 @@ public class ButtonFinal01 extends JButton implements ActionListener {
 		chung.addActionListener(this);
 		chung.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		chung.setFocusPainted(false);
-		chung.setBorderPainted(false);
-		chung.setRolloverEnabled(true);
+		chung.setBorderPainted(false);	
 		chung.setRolloverIcon(img[12]);
-		//add(chung);
 		//setResizable(false);
-		chung.setVisible(true);
-		
-
-		
+		chung.setVisible(true);	
 
 	}
 
 	public void setRolloverIcon(ImageIcon imageIcon) {
-		chung.setRolloverEnabled(true);
+		if(chung.getX() == 400) {
 		chung.setRolloverIcon(imageIcon);
-		chung.setLocation(chung.getX(), chung.getY());
-
+		
+		}else if(chung.getX() > 400){
+			chung.setRolloverEnabled(false);
+		}
 	}
 
 	// 1 2 3 4 5 6 7 8 9 10 11 12
@@ -107,6 +104,7 @@ public class ButtonFinal01 extends JButton implements ActionListener {
 								moveButton(new Point(point.x, point.y -= 7));
 							}
 							if (i == 49) {
+								chung.setIcon(img[3]);
 								ui_unit = new UiChange_Out();
 
 							}
@@ -163,6 +161,8 @@ public class ButtonFinal01 extends JButton implements ActionListener {
 								if (i >= 4 && i % 4 == 0 ) {
 									chung.setIcon(img[8]);
 									moveButton(new Point(point.x -= 7, point.y));
+								}if( i ==49) {
+									chung.setIcon(img[3]);
 								}
 
 							}

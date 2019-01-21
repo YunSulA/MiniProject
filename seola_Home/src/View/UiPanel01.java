@@ -182,24 +182,24 @@ class TextPanel01	extends JPanel{
 	
 	nameTextField =  new JTextField();
 	panel02.add(nameTextField);
-	nameTextField.setSize(102,55);
-	nameTextField.setLocation(8,85);
+	nameTextField.setSize(102,60);
+	nameTextField.setLocation(20,105);
 	
 	birthTextField =  new JTextField();
 	panel02.add(birthTextField);
-	birthTextField.setSize(102,55);
-	birthTextField.setLocation(133,85);
+	birthTextField.setSize(102,60);
+	birthTextField.setLocation(140,105);
 	
 	telTextField =  new JTextField();
 	panel02.add(telTextField);
-	telTextField.setSize(105,80);
-	telTextField.setLocation(270,60);
+	telTextField.setSize(102,60);
+	telTextField.setLocation(265,105);
 	
 	
 	addressTextField =  new JTextField();
 	panel02.add(addressTextField);
-	addressTextField.setSize(100,80);
-	addressTextField.setLocation(390,60);
+	addressTextField.setSize(102,60);
+	addressTextField.setLocation(390,105);
 	
 	}
 	

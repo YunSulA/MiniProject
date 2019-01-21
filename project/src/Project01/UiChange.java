@@ -13,7 +13,7 @@ public class UiChange  extends JFrame implements WindowListener{
 	static Toolkit tk = Toolkit.getDefaultToolkit();
 	static int f_width = 750;
 	static int f_height = 539;
-	ButtonFinal01 buttonmove;
+	Button01 buttonmove;
 	
 	public void change(String panelName) {
 		if(panelName.equals("uipanel01")) {

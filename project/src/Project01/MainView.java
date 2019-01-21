@@ -10,15 +10,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class ButtonOut2Final01 extends JFrame implements ActionListener {
+public class MainView extends JFrame implements ActionListener {
 
-	ButtonFinal01 button = new ButtonFinal01();
+	Button01 button = new Button01();
 	JButton chung1 = button.getButton();
 	JFrame frame = new JFrame("박성정 선생님 취업반");
 	private JPanel panel = new MyPanel();
 
 
-	ButtonOut2Final01() {
+	MainView() {
     	
         frame.setLayout(null);
         frame.setSize(1400,900);
@@ -43,7 +43,7 @@ public class ButtonOut2Final01 extends JFrame implements ActionListener {
     
 	
 	public static void main(String[] args) {
-		ButtonOut2Final01 b = new ButtonOut2Final01();
+		MainView b = new MainView();
 		
 	}
 
