@@ -16,7 +16,6 @@ public class Academy_DAO {
 	
 	public int addDao(Connection conn, Academy academy) throws SQLException {
 		PreparedStatement pstmt = null;
-		
 		try {
 			pstmt = conn.prepareStatement("INSERT INTO ACADEMY VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			pstmt.setString(1, academy.getName());
@@ -26,22 +25,23 @@ public class Academy_DAO {
 			pstmt.setString(5, academy.getMajor());
 			pstmt.setString(6, academy.getItcourse());
 			pstmt.setInt(7, academy.getTribute());
-			pstmt.setInt(8, academy.getScores());
-			pstmt.setInt(9, academy.getAttend());
-			pstmt.setString(10, academy.getSurvey());
+			pstmt.setInt(8, academy.getDatabaseScore());
+			pstmt.setInt(9, academy.getJavaScore());
+			pstmt.setInt(10, academy.getJavascriptScore());
+			pstmt.setInt(11, academy.getJspScore());
+			pstmt.setInt(12, academy.getAttendance());
+			pstmt.setString(13, academy.getSurvey());
 			// 이름 . 생년월일. 전화번호. 주소. 전공. 단과반유무. 조공횟수. 성적. 출석. 설문조사
 	// name. birth. tel. address. major. itcourse. tribute. scores. attend. survey
-	// 외부 테이블이 존재하는 항목 : scores. attend 				
+			// name. birth. tel. address. major. itcourse. tribute. database. java. javascript. jsp, attendance. survey		
+			
+			
+	// 외부 테이블이 존재하는 항목 : attend 				
 					
 			return pstmt.executeUpdate();	
 			
 		} finally {
 			DBResourceReturn.close(pstmt);
 		}
-		
-		
 	}
-	
-	
-	
 }
