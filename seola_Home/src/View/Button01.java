@@ -35,13 +35,14 @@ public class Button01 extends JButton implements ActionListener {
 	Thread t;
 	static Thread t2;
 	UiChange_Out ui_unit;
-	
+	//구협좌석 좌표 793 , 540
+	//목표 좌표 625 180
 	
 	public Button01() {
 		//setLayout(null);
-		x = 400;
-		y = 400;
-		chung.setBounds(x, y, 104, 104);
+		x = 793;
+		y = 540;
+		chung.setBounds(x, y, 156, 156);
 		chung.addActionListener(this);
 		chung.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		chung.setFocusPainted(false);
@@ -70,35 +71,35 @@ public class Button01 extends JButton implements ActionListener {
 	// 4 8 12 -> img[11](움직임2) 4의배수
 	public void move() {
 		Point point = chung.getLocation();
-		final int delay = 100;
+		final int delay = 60;
 		Runnable r = new Runnable() {
 			@Override
 			public void run() {
 
-				for (int i = 0; i < 50; i++) {
+				for (int i = 0; i < 52; i++) {
 
 					try {
-						if (i < 25) {
+						if (i < 16) {
 							if (i >= 2 && !(i % 4 == 0)) {
-								chung.setIcon(img[10]);
-								moveButton(new Point(point.x += 7, point.y));
+								chung.setIcon(img[7]);
+								moveButton(new Point(point.x -= 7, point.y));
 							}
 							if (i % 2 == 1) {
-								chung.setIcon(img[9]);
-								moveButton(new Point(point.x += 7, point.y));
+								chung.setIcon(img[6]);
+								moveButton(new Point(point.x -= 7, point.y));
 							}
 							if (i >= 4 && i % 4 == 0) {
-								chung.setIcon(img[11]);
-								moveButton(new Point(point.x += 7, point.y));
+								chung.setIcon(img[8]);
+								moveButton(new Point(point.x -= 7, point.y));
 							}
 
-						} else if (i > 25) {
+						} else if (i >= 17) {
 
 							if (i >= 2 && !(i % 4 == 0) ) {
 								chung.setIcon(img[1]);
 								moveButton(new Point(point.x, point.y -= 7));
 							}
-							if (i % 2 == 1 && i < 50) {
+							if (i % 2 == 1 ) {
 								chung.setIcon(img[0]);
 								moveButton(new Point(point.x, point.y -= 7));
 							}
@@ -106,7 +107,8 @@ public class Button01 extends JButton implements ActionListener {
 								chung.setIcon(img[2]);
 								moveButton(new Point(point.x, point.y -= 7));
 							}
-							if (i == 49) {
+							if (i == 51) {
+								chung.setIcon(img[3]);
 								ui_unit = new UiChange_Out();
 
 							}
@@ -129,14 +131,14 @@ public class Button01 extends JButton implements ActionListener {
 	
 	public static void move2() {
 		Point point = chung.getLocation();
-		final int delay = 80;
+		final int delay = 60;
 		Runnable r = new Runnable() {
 			@Override
 			public void run() {
 			
-					for (int i = 0; i < 50; i++) {
+					for (int i = 0; i < 52; i++) {
 						try {
-							if (i < 24) {
+							if (i < 37) {
 								if (i >= 2 && !(i % 4 == 0)) {
 									chung.setIcon(img[4]);
 									moveButton(new Point(point.x, point.y += 7));
@@ -150,19 +152,22 @@ public class Button01 extends JButton implements ActionListener {
 									moveButton(new Point(point.x, point.y += 7));
 								}
 
-							} else if (i > 26) {
+							} else if (i >= 37) {
 
 								if (i >= 2 && !(i % 4 == 0) ) {
-									chung.setIcon(img[7]);
-									moveButton(new Point(point.x -= 7, point.y));
+									chung.setIcon(img[10]);
+									moveButton(new Point(point.x += 7, point.y));
 								}
 								if (i % 2 == 1 && i < 50) {
-									chung.setIcon(img[6]);
-									moveButton(new Point(point.x -= 7, point.y));
+									chung.setIcon(img[9]);
+									moveButton(new Point(point.x += 7, point.y));
 								}
 								if (i >= 4 && i % 4 == 0 ) {
-									chung.setIcon(img[8]);
-									moveButton(new Point(point.x -= 7, point.y));
+									chung.setIcon(img[11]);
+									moveButton(new Point(point.x += 7, point.y));
+								}
+								if( i == 51) {
+									chung.setIcon(img[3]);
 								}
 
 							}
@@ -188,7 +193,7 @@ public class Button01 extends JButton implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == chung && chung.getX() == 400) {
+		if (e.getSource() == chung && chung.getX() == 793) {
 			move();
 		}
 

@@ -21,11 +21,11 @@ public class MainView extends JFrame implements ActionListener {
 	MainView() {
     	
         frame.setLayout(null);
-        frame.setSize(1400,900);
+        frame.setSize(1400,970);
         frame.setVisible(true);
         frame.add(panel);
         panel.setLayout(null);
-        panel.setBounds(0,0,1400,900);
+        panel.setBounds(0,0,1400,950);
         panel.add(chung1);
        
        
@@ -35,8 +35,8 @@ public class MainView extends JFrame implements ActionListener {
     class MyPanel extends JPanel{
     @Override
     	protected void paintComponent(Graphics g) {
-    		Image img = new ImageIcon("img//back.png").getImage();
-    		g.drawImage(img,0,0,1400,900,null);
+    		Image img = new ImageIcon("img//class.png").getImage();
+    		g.drawImage(img,0,0,1400,950,null);
     	}
     }
     
