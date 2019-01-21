@@ -16,7 +16,7 @@ public class UiChange  extends JFrame{
 	
 	static Toolkit tk = Toolkit.getDefaultToolkit();
 	static int f_width = 750;
-	static int f_height = 539;
+	static int f_height = 580;
 	
 	public void change(String panelName) {
 		if(panelName.equals("uipanel01")) {
@@ -60,7 +60,7 @@ public class UiChange  extends JFrame{
 		
 		win.add(win.uipanel01);
 		win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		win.setSize(750,540);
+		win.setSize(767,580);
 		win.setVisible(true);
 
 	}

@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 public class UiChange_Out  implements WindowListener {
 	static Toolkit tk = Toolkit.getDefaultToolkit();
 	static int f_width = 750;
-	static int f_height = 539;
+	static int f_height = 540;
 	static UiChange win;
 	
 	

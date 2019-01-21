@@ -20,9 +20,6 @@ public class UiPanel03 extends JPanel {
 	private JButton menu3 ;
 	private JButton menu4 ;
 	
-	
-	Image background[] = { new ImageIcon("C:\\mini\\UI.png").getImage(), new ImageIcon("img\\UI01.png").getImage(),
-			new ImageIcon("img\\UI02.png").getImage(), };
 
 	public UiPanel03(UiChange win) {
 		this.win = win;
@@ -37,29 +34,29 @@ public class UiPanel03 extends JPanel {
 		
 		
 		menu1 = new JButton();
-		menu1.setBounds(60, 100, 100, 60);	
+		menu1.setBounds(40, 40, 140, 80);	
 		menu1.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		menu1.setFocusPainted(false);
 		menu1.setBorderPainted(false);
 		panel03.add(menu1);
 		
 		menu2 =  new JButton();
-		menu2.setBounds(60, 200, 100, 60);	
+		menu2.setBounds(40, 160, 140, 80);	
 		menu2.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		menu2.setFocusPainted(false);
 		menu2.setBorderPainted(false);
 		panel03.add(menu2);
 		
 		menu3 =  new JButton();
-		menu3.setBounds(60, 300, 100, 60);	
-		menu3.setContentAreaFilled(true);// 버튼 내용영역 안채움
+		menu3.setBounds(40, 300, 140, 80);	
+		menu3.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		menu3.setFocusPainted(false);
 		menu3.setBorderPainted(false);
 		panel03.add(menu3);
 		
 		menu4 =  new JButton();
-		menu4.setBounds(60, 400, 100, 60);	
-		menu4.setContentAreaFilled(true);// 버튼 내용영역 안채움
+		menu4.setBounds(40, 420, 140, 80);	
+		menu4.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		menu4.setFocusPainted(false);
 		menu4.setBorderPainted(false);
 		panel03.add(menu4);
@@ -73,8 +70,8 @@ public class UiPanel03 extends JPanel {
 	class MyPanel03 extends JPanel {
 		@Override
 		protected void paintComponent(Graphics g) {
-			Image img = new ImageIcon("img\\UI02.png").getImage();
-			g.drawImage(img, 0, 0, 750, 500, null);
+			Image img = new ImageIcon("img\\UI01_3.png").getImage();
+			g.drawImage(img, 0, 0, 750, 540, null);
 		}
 	}
 	
