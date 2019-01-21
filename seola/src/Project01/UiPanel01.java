@@ -21,7 +21,7 @@ public class UiPanel01 extends JPanel {
 	private JButton menu2 ;
 	private JButton menu3 ;
 	private JButton menu4 ;
-	//Å×½ºÆ®
+	
 	
 	Image background[] = { new ImageIcon("C:\\mini\\UI.png").getImage(), new ImageIcon("img\\UI01.png").getImage(),
 			new ImageIcon("img\\UI02.png").getImage(), };
