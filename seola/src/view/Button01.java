@@ -12,6 +12,7 @@ import java.awt.event.WindowListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
 import DAO.Academy_DAO_select;
@@ -21,17 +22,14 @@ import model.Academy;
  * 
  */
 public class Button01 extends JButton implements ActionListener {
-
+	int sno = 1;
 	static ImageIcon[] img = { new ImageIcon("img//Guhyup_charback.png"),
 			new ImageIcon("img//Guhyup_charback_walk1.png"), new ImageIcon("img//Guhyup_charback_walk2.png"),
 			new ImageIcon("img//Guhyup_charfront.png"), new ImageIcon("img//Guhyup_charfront_walk1.png"),
 			new ImageIcon("img//Guhyup_charfront_walk2.png"), new ImageIcon("img//Guhyup_charLeft.png"),
-			new ImageIcon("img//Guhyup_charLeft_walk1.png"),
-			new ImageIcon("img//Guhyup_charLeft_walk2.png"), new ImageIcon("img//Guhyup_charRight.png"),
-			new ImageIcon("img//Guhyup_charRight_walk1.png"),
-			new ImageIcon("img//Guhyup_charRight_walk2.png"),
-			new ImageIcon("img//Guhyup_charfront_roll.png")
-	};
+			new ImageIcon("img//Guhyup_charLeft_walk1.png"), new ImageIcon("img//Guhyup_charLeft_walk2.png"),
+			new ImageIcon("img//Guhyup_charRight.png"), new ImageIcon("img//Guhyup_charRight_walk1.png"),
+			new ImageIcon("img//Guhyup_charRight_walk2.png"), new ImageIcon("img//Guhyup_charfront_roll.png") };
 	Image Backgraound = new ImageIcon("img//back.png").getImage();
 	static JButton chung = new JButton(img[3]);
 	int x, y;
@@ -39,19 +37,16 @@ public class Button01 extends JButton implements ActionListener {
 	static Thread t2;
 	UiChange_Out ui_unit;
 	static int telnum;
-	TelSave telsave;
 	Academy_DAO_select select = new Academy_DAO_select();
-	Academy academy ;
-	private UiChange  win ;
-	UiPanel01 uipanel01 = new UiPanel01(win);
-	
-	
-	
-	//±¸ÇùÁÂ¼® ÁÂÇ¥ 793 , 540
-	//¸ñÇ¥ ÁÂÇ¥ 625 180
-	
+	Academy academy;
+	private UiChange win;
+	UiPanel01_1 uipanel01_1 = new UiPanel01_1();
+
+	// ±¸ÇùÁÂ¼® ÁÂÇ¥ 793 , 540
+	// ¸ñÇ¥ ÁÂÇ¥ 625 180
+
 	public Button01() {
-		//setLayout(null);
+		// setLayout(null);
 		x = 793;
 		y = 540;
 		chung.setBounds(x, y, 156, 156);
@@ -61,9 +56,9 @@ public class Button01 extends JButton implements ActionListener {
 		chung.setBorderPainted(false);
 		chung.setRolloverEnabled(true);
 		chung.setRolloverIcon(img[12]);
-		//add(chung);
-		//setResizable(false);
-		chung.setVisible(true);	
+		// add(chung);
+		// setResizable(false);
+		chung.setVisible(true);
 
 	}
 
@@ -104,11 +99,11 @@ public class Button01 extends JButton implements ActionListener {
 
 						} else if (i >= 17) {
 
-							if (i >= 2 && !(i % 4 == 0) ) {
+							if (i >= 2 && !(i % 4 == 0)) {
 								chung.setIcon(img[1]);
 								moveButton(new Point(point.x, point.y -= 7));
 							}
-							if (i % 2 == 1 ) {
+							if (i % 2 == 1) {
 								chung.setIcon(img[0]);
 								moveButton(new Point(point.x, point.y -= 7));
 							}
@@ -136,56 +131,54 @@ public class Button01 extends JButton implements ActionListener {
 		// ¾²·¹µå Á¾·á??
 	}
 
-	
-	
 	public static void move2() {
 		Point point = chung.getLocation();
 		final int delay = 60;
 		Runnable r = new Runnable() {
 			@Override
 			public void run() {
-			
-					for (int i = 0; i < 52; i++) {
-						try {
-							if (i < 37) {
-								if (i >= 2 && !(i % 4 == 0)) {
-									chung.setIcon(img[4]);
-									moveButton(new Point(point.x, point.y += 7));
-								}
-								if (i % 2 == 1) {
-									chung.setIcon(img[3]);
-									moveButton(new Point(point.x, point.y += 7));
-								}
-								if (i >= 4 && i % 4 == 0) {
-									chung.setIcon(img[5]);
-									moveButton(new Point(point.x, point.y += 7));
-								}
 
-							} else if (i >= 37) {
-
-								if (i >= 2 && !(i % 4 == 0) ) {
-									chung.setIcon(img[10]);
-									moveButton(new Point(point.x += 7, point.y));
-								}
-								if (i % 2 == 1 && i < 50) {
-									chung.setIcon(img[9]);
-									moveButton(new Point(point.x += 7, point.y));
-								}
-								if (i >= 4 && i % 4 == 0 ) {
-									chung.setIcon(img[11]);
-									moveButton(new Point(point.x += 7, point.y));
-								}
-								if( i == 51) {
-									chung.setIcon(img[3]);
-								}
-
+				for (int i = 0; i < 52; i++) {
+					try {
+						if (i < 37) {
+							if (i >= 2 && !(i % 4 == 0)) {
+								chung.setIcon(img[4]);
+								moveButton(new Point(point.x, point.y += 7));
 							}
-							Thread.sleep(delay);
-						} catch (InterruptedException ex) {
-							ex.printStackTrace();
+							if (i % 2 == 1) {
+								chung.setIcon(img[3]);
+								moveButton(new Point(point.x, point.y += 7));
+							}
+							if (i >= 4 && i % 4 == 0) {
+								chung.setIcon(img[5]);
+								moveButton(new Point(point.x, point.y += 7));
+							}
+
+						} else if (i >= 37) {
+
+							if (i >= 2 && !(i % 4 == 0)) {
+								chung.setIcon(img[10]);
+								moveButton(new Point(point.x += 7, point.y));
+							}
+							if (i % 2 == 1 && i < 50) {
+								chung.setIcon(img[9]);
+								moveButton(new Point(point.x += 7, point.y));
+							}
+							if (i >= 4 && i % 4 == 0) {
+								chung.setIcon(img[11]);
+								moveButton(new Point(point.x += 7, point.y));
+							}
+							if (i == 51) {
+								chung.setIcon(img[3]);
+							}
+
 						}
+						Thread.sleep(delay);
+					} catch (InterruptedException ex) {
+						ex.printStackTrace();
 					}
 				}
+			}
 		};
 		t2 = new Thread(r);
 		t2.start();
@@ -203,9 +196,16 @@ public class Button01 extends JButton implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == chung && chung.getX() == 793) {
-			move();
-			int stdno = select.stdno[0];
-			uipanel01.namelabel.setText(stdno + "");
+			
+			for (int i = 0; i < select.sno.length; i++) {
+				if(sno == select.sno[i]) {
+				uipanel01_1.nametext = new JTextArea(select.name[i]);
+				uipanel01_1.birthtext.setText(select.birth[i]);
+				uipanel01_1.teltext.setText(select.tel[i]);
+				uipanel01_1.addresstext.setText(select.address[i]);
+				
+				}
+			}move();
 		}
 
 	}
@@ -213,6 +213,7 @@ public class Button01 extends JButton implements ActionListener {
 	public JButton getButton() {
 		return chung;
 	}
+
 
 }
 
