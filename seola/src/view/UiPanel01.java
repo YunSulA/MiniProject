@@ -21,7 +21,7 @@ public class UiPanel01 extends JPanel {
 	
 	private JPanel panel01 = new MyPanel01();
 	private UiChange  win;
-	private TextPanel01 textpanel = null;
+	private TextPanel01 textpanel = new TextPanel01();
 	private JButton menu1 ;
 	private JButton menu2 ;
 	private JButton menu3 ;
@@ -102,6 +102,11 @@ public class UiPanel01 extends JPanel {
 		add_bt.setRolloverEnabled(true);
 		add_bt.setRolloverIcon(ui_bt[3]);
 		add_bt.addActionListener(new MyActionListener());
+		
+		if(textpanel != null) {
+			System.out.println("Àû¿ë");
+		remove(textpanel);
+		}
 				
 	}
 
