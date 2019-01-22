@@ -14,6 +14,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
+import DAO.Academy_DAO_select;
+import model.Academy;
+
 /* 버튼이 움직이면 버튼안의 이미지가 바뀜
  * 
  */
@@ -35,6 +38,15 @@ public class Button01 extends JButton implements ActionListener {
 	Thread t;
 	static Thread t2;
 	UiChange_Out ui_unit;
+	static int telnum;
+	TelSave telsave;
+	Academy_DAO_select select = new Academy_DAO_select();
+	Academy academy ;
+	private UiChange  win ;
+	UiPanel01 uipanel01 = new UiPanel01(win);
+	
+	
+	
 	//구협좌석 좌표 793 , 540
 	//목표 좌표 625 180
 	
@@ -51,10 +63,7 @@ public class Button01 extends JButton implements ActionListener {
 		chung.setRolloverIcon(img[12]);
 		//add(chung);
 		//setResizable(false);
-		chung.setVisible(true);
-		
-
-		
+		chung.setVisible(true);	
 
 	}
 
@@ -195,6 +204,8 @@ public class Button01 extends JButton implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == chung && chung.getX() == 793) {
 			move();
+			int stdno = select.stdno[0];
+			uipanel01.namelabel.setText(stdno + "");
 		}
 
 	}
