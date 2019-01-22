@@ -1,4 +1,4 @@
-package View;
+package view;
 
 
 import java.awt.BorderLayout;
@@ -9,10 +9,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import View.UiPanel03.MyActionListener;
+import view.UiPanel03.MyActionListener;
 import model.Academy;
 
 
@@ -20,8 +21,11 @@ import model.Academy;
 public class UiPanel01 extends JPanel {
 	
 	private JPanel panel01 = new MyPanel01();
+	static JLabel namelabel = new JLabel();
+	static JLabel birthlabel = new JLabel();
 	private UiChange  win;
-	private TextPanel01 textpanel = null;
+	private TextPanel01 textpanel = new TextPanel01();
+	
 	private JButton menu1 ;
 	private JButton menu2 ;
 	private JButton menu3 ;
@@ -35,10 +39,10 @@ public class UiPanel01 extends JPanel {
 			new ImageIcon("img\\Change_bt_roll.png"),
 			new ImageIcon("img\\Add_bt.png"),
 			new ImageIcon("img\\Add_bt_roll.png")
-			
 	};
 
 	public UiPanel01(UiChange win) {
+		remove(textpanel);
 		this.win = win;
 		setSize(750,540);
 		setVisible(true);
@@ -48,6 +52,12 @@ public class UiPanel01 extends JPanel {
 	
 		panel01.setSize(750,540);
 		panel01.setLayout(null);
+		panel01.add(namelabel);
+		panel01.add(birthlabel);
+		namelabel.setSize(100,100);
+		namelabel.setLocation(250,90);
+		birthlabel.setSize(100,100);
+		birthlabel.setLocation(350,90);
 		
 		
 		menu1 = new JButton();
@@ -102,6 +112,11 @@ public class UiPanel01 extends JPanel {
 		add_bt.setRolloverEnabled(true);
 		add_bt.setRolloverIcon(ui_bt[3]);
 		add_bt.addActionListener(new MyActionListener());
+		
+		if(textpanel != null) {
+			System.out.println("Àû¿ë");
+		
+		}
 				
 	}
 
@@ -147,6 +162,7 @@ public class UiPanel01 extends JPanel {
 				
 				Academy academy = new Academy();
 				academy.setName(textpanel.nameTextField.getText());
+				System.out.println(textpanel.nameTextField.getText());
 				academy.setBirth(textpanel.birthTextField.getText());
 				academy.setTel(textpanel.telTextField.getText());
 				academy.setAddress(textpanel.addressTextField.getText());
@@ -176,7 +192,7 @@ class TextPanel01	extends JPanel{
 	setLayout(null);
 	
 	panel02.setSize(515,257);
-	panel02.setLocation(0,00);
+	panel02.setLocation(0,0);
 	add(panel02);
 	
 	
