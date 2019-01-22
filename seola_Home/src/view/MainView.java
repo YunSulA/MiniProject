@@ -47,6 +47,7 @@ public class MainView extends JFrame implements ActionListener {
     }
     
     
+    
 	
 	public static void main(String[] args) {
 		MainView b = new MainView();

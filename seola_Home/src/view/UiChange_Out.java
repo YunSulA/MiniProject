@@ -30,7 +30,7 @@ public class UiChange_Out  implements WindowListener {
 		win.uipanel02 = new UiPanel02(win);
 		win.uipanel03 = new UiPanel03(win);
 		win.uipanel04 = new UiPanel04(win);
-		
+
 		win.add(win.uipanel01);
 		win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		win.setSize(750,580);

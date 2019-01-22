@@ -2,8 +2,8 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+
+
 
 import javax.swing.JFrame;
 
@@ -12,7 +12,6 @@ public class UiChange  extends JFrame{
 	public UiPanel02 uipanel02 = null;
 	public UiPanel03 uipanel03 = null;
 	public UiPanel04 uipanel04 = null;
-	public TextPanel01 uipanel01_01 = null;
 	
 	
 	static Toolkit tk = Toolkit.getDefaultToolkit();
@@ -40,10 +39,6 @@ public class UiChange  extends JFrame{
 			getContentPane().add(uipanel04);
 			revalidate();
 			repaint();
-		}else if(panelName.equals("uipanel01_01")) {
-			getContentPane().removeAll();
-			getContentPane().add(uipanel01_01);
-			revalidate();
 		}
 		
 	}
@@ -62,7 +57,6 @@ public class UiChange  extends JFrame{
 		win.uipanel02 = new UiPanel02(win);
 		win.uipanel03 = new UiPanel03(win);
 		win.uipanel04 = new UiPanel04(win);
-		
 		
 		win.add(win.uipanel01);
 		win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
