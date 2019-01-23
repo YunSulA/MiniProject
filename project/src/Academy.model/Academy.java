@@ -32,7 +32,6 @@ public class Academy {
 			this.survey = survey;
 		}
 		
-		
 		public int getDatabaseScore() {
 			return databaseScore;
 		}
@@ -61,7 +60,11 @@ public class Academy {
 			return attendance;
 		}
 		public void setAttendance(int attendance) {
-			this.attendance = attendance;
+			if (attendance > 100) {
+				JOptionPane.showMessageDialog(null, "출석률은 100%를 초과할 수 없습니다.", "Error", JOptionPane.ERROR_MESSAGE);
+			} else {
+				this.attendance = attendance;
+			}
 		}
 		public String getName() {
 			return name;
