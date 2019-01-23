@@ -14,12 +14,14 @@ import javax.swing.JPanel;
 
 public class MainView extends JFrame implements ActionListener {
 	Toolkit tk = Toolkit.getDefaultToolkit();
-	Button01 Button01 = new Button01();
-	JButton chung1 = Button01.getButton();
+	Button_Guhyup Guhyup = new Button_Guhyup();
+	JButton guhyup = Guhyup.getButton();
+	Button_Jinwha Jinwha = new Button_Jinwha();
+	JButton jinwha = Jinwha.getButton();
 	JFrame frame = new JFrame("박성정 선생님 취업반");
 	private JPanel panel = new MyPanel();
-	static int f_width = 1400;
-	static int f_height = 970;
+	static int f_width = 1250;
+	static int f_height = 950;
 
 	MainView() {
 		Dimension screen = tk.getScreenSize();
@@ -27,12 +29,13 @@ public class MainView extends JFrame implements ActionListener {
 		int f_ypos = (int) (screen.getHeight() / 2 - f_height / 2);
 		frame.setLocation(f_xpos, f_ypos);
         frame.setLayout(null);
-        frame.setSize(1400,970);
+        frame.setSize(1250,930);
         frame.setVisible(true);
         frame.add(panel);
         panel.setLayout(null);
-        panel.setBounds(0,0,1400,950);
-        panel.add(chung1);
+        panel.setBounds(0,0,1244,950);
+        panel.add(guhyup);
+        panel.add(jinwha);
        
        
 	}
@@ -41,11 +44,10 @@ public class MainView extends JFrame implements ActionListener {
     class MyPanel extends JPanel{
     @Override
     	protected void paintComponent(Graphics g) {
-    		Image img = new ImageIcon("img//class.png").getImage();
-    		g.drawImage(img,0,0,1400,950,null);
+    		Image img = new ImageIcon("img//class4.png").getImage();
+    		g.drawImage(img,0,0,1250,900,null);
     	}
     }
-    
     
     
 	
