@@ -12,11 +12,11 @@ public class UiChange  extends JFrame{
 	public UiPanel02 uipanel02 = null;
 	public UiPanel03 uipanel03 = null;
 	public UiPanel04 uipanel04 = null;
-	public TextPanel01 uipanel01_01 = null;
+
 	
 	
 	static Toolkit tk = Toolkit.getDefaultToolkit();
-	static int f_width = 750;
+	static int f_width = 800;
 	static int f_height = 580;
 	
 	public void change(String panelName) {
@@ -39,12 +39,8 @@ public class UiChange  extends JFrame{
 			getContentPane().removeAll();
 			getContentPane().add(uipanel04);
 			revalidate();
-			repaint();
-		}else if(panelName.equals("uipanel01_01")) {
-			getContentPane().removeAll();
-			getContentPane().add(uipanel01_01);
-			revalidate();
-		}
+			repaint();}
+
 		
 	}
 	
