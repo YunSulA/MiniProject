@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import DAO.Academy_DAO_select;
@@ -41,6 +42,7 @@ public class Button01 extends JButton implements ActionListener {
 	Academy academy;
 	private UiChange win;
 	UiPanel01_1 uipanel01_1 = new UiPanel01_1();
+	
 
 	// ±¸ÇùÁÂ¼® ÁÂÇ¥ 793 , 540
 	// ¸ñÇ¥ ÁÂÇ¥ 625 180
@@ -87,6 +89,7 @@ public class Button01 extends JButton implements ActionListener {
 							if (i >= 2 && !(i % 4 == 0)) {
 								chung.setIcon(img[7]);
 								moveButton(new Point(point.x -= 7, point.y));
+								
 							}
 							if (i % 2 == 1) {
 								chung.setIcon(img[6]);
@@ -144,6 +147,7 @@ public class Button01 extends JButton implements ActionListener {
 							if (i >= 2 && !(i % 4 == 0)) {
 								chung.setIcon(img[4]);
 								moveButton(new Point(point.x, point.y += 7));
+								
 							}
 							if (i % 2 == 1) {
 								chung.setIcon(img[3]);
@@ -170,6 +174,7 @@ public class Button01 extends JButton implements ActionListener {
 							}
 							if (i == 51) {
 								chung.setIcon(img[3]);
+								
 							}
 
 						}
@@ -199,10 +204,10 @@ public class Button01 extends JButton implements ActionListener {
 			
 			for (int i = 0; i < select.sno.length; i++) {
 				if(sno == select.sno[i]) {
-				uipanel01_1.nametext = new JTextArea(select.name[i]);
-				uipanel01_1.birthtext.setText(select.birth[i]);
+				uipanel01_1.nametext.setText(select.name[i]);
+				uipanel01_1.birthtext.setText(" " + select.birth[i]);
 				uipanel01_1.teltext.setText(select.tel[i]);
-				uipanel01_1.addresstext.setText(select.address[i]);
+				uipanel01_1.addresstext.setText("     " +select.address[i]);
 				
 				}
 			}move();

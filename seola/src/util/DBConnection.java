@@ -12,8 +12,8 @@ public class DBConnection {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			try {
-				String userId = "SCHOOL";
-				String userPw = "kg";
+				String userId = "ACADEMY";
+				String userPw = "SEOLA0918";
 				String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 				conn = DriverManager.getConnection(url, userId, userPw);
 			} catch (SQLException e) {
