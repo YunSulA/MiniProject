@@ -40,8 +40,8 @@ public class view {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Academy academy = new Academy();
-//				추가 잘된다. 그런데 값을 잘못 입력하면 SQL에러문이 떠야하는데 그냥 프레임이 꺼지지않고 다운되는 현상이 발생하는데 왜 그런지 모르겠다.
-//				Service_add seradd = Service_add.getInstance();
+//				추가 잘된다. 그런데 값을 잘못 입력하면 SQL에러문이 떠야하는데 그냥 프레임이 꺼지지않고 다운되는 현상이 발생하는데 왜 그런지 모르겠다..
+//				Service_add seradd = Service_add.getInstance(); 
 //				seradd.insert(academy);
 				
 				Service_change serchange = Service_change.getInstance();
