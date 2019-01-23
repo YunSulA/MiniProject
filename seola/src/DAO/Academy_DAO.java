@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 import model.Academy;
 import util.DBResourceReturn;
-import view.UiChange;
-import view.UiPanel01;
 import view.UiPanel01_1;
 
 public class Academy_DAO {
@@ -36,11 +34,11 @@ public class Academy_DAO {
 		
 		try {
 			pstmt=conn.prepareStatement("UPDATE ACADEMY SET NAME=? WHERE SNO=1");
-			
-			pstmt.setString(1,  UiPanel01_1.nametext.getText());
+			pstmt.setString(1, UiPanel01_1.nametext.getText());
 			return pstmt.executeUpdate();
 		} finally {
 			DBResourceReturn.close(pstmt);
 		}
 	}
+	
 }

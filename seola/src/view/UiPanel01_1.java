@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import model.Academy;
+import service.Service_change;
 import view.UiPanel01_1.MyActionListener;
 import view.UiPanel01_1.MyPanel01;
 
@@ -309,7 +310,9 @@ public class UiPanel01_1 extends JPanel{
 				nametext.setText(nametext.getText());
 				revalidate();
 				repaint();
-				academy = new Academy(nametext.getText());
+				academy = new Academy();
+				Service_change serchange = Service_change.getInstance();
+				serchange.nameChange(academy);
 				academy.nameB = false;
 				
 				
