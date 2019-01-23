@@ -18,7 +18,4 @@ public class DBResourceReturn {
 	public static void close(Connection conn) {
 		if (conn != null) try { conn.close(); } catch (SQLException e) {}
 	}
-	
-	
-	
 }

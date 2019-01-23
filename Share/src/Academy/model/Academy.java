@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class Academy {
 		// 기본 필드 (테이블 항목)
 	  //private String itcourse;  단과 : 체크박스로 변경
+		private int sno;
 		private String name;
 		private String birth;
 		private String tel;
@@ -33,7 +34,8 @@ public class Academy {
 		public Academy() { }
 		
 		// 인원추가용 전체 생성자  
-		public Academy(String name, String birth, String tel, String address, String major, int tribute, int database, int java, int script, int jsp, double attendance) {
+		public Academy(int sno, String name, String birth, String tel, String address, String major, int tribute, int database, int java, int script, int jsp, double attendance) {
+			this.sno = sno;
 			this.name = name;
 			this.birth = birth;
 			this.tel = tel;
@@ -199,5 +201,14 @@ public class Academy {
 				this.attendance = attendance;
 			}
 		}
+
+		public int getSno() {
+			return sno;
+		}
+
+		public void setSno(int sno) {
+			this.sno = sno;
+		}
+
 
 }

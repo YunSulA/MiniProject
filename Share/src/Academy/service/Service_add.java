@@ -15,7 +15,7 @@ public class Service_add {
 	public static Service_add getInstance() {
 		return serviceAdd;
 	}
-	
+	 
 	public static void insert(Academy academy) {
 		Connection conn = null;
 		try {
@@ -28,6 +28,7 @@ public class Service_add {
 			DBResourceReturn.close(conn);
 		}
 	}
+	
 //	
 //	public static void changeBirth(Academy academy) {
 //		Connection conn = null;

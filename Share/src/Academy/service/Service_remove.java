@@ -8,25 +8,30 @@ import Academy.model.Academy;
 import Academy.util.DBConnection;
 import Academy.util.DBResourceReturn;
 
-public class Service_change {
-
-	private static Service_change servicechange = new Service_change();
-	private Service_change() { }
-	public static Service_change getInstance() {
-		return servicechange;
+public class Service_remove {
+ 
+	private static Service_remove serviceRemove = new Service_remove();
+	private Service_remove() { }
+	public static Service_remove getInstance() {
+		return serviceRemove;
 	}
-
-	public static void nameChange(Academy academy) {
+	
+	public static void remove(Academy academy) {
 		Connection conn = null;
 		try {
 			conn = DBConnection.getConn();
 			Academy_DAO academyDao = Academy_DAO.getInstance();
-			academyDao.changeNameDao(conn, academy);
+			academyDao.removeDao(conn, academy);
+			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
 			DBResourceReturn.close(conn);
 		}
+		
 	}
-
+	
+	
+	
+	
 }
