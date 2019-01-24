@@ -45,7 +45,7 @@ public class UiPanel01_1 extends JPanel{
 	
 
 	ImageIcon ui_bt[] = { new ImageIcon("img\\Change_bt.png"), new ImageIcon("img\\Change_bt_roll.png"),
-			new ImageIcon("img\\Add_bt.png"), new ImageIcon("img\\Add_bt_roll.png") };
+			new ImageIcon("img\\Add_bt3.png"), new ImageIcon("img\\Add_bt3_roll.png"),  new ImageIcon("img\\Cancel_bt2.png"), new ImageIcon("img\\Cancel_bt2_roll.png")};
 
 	public UiPanel01_1() {
 	
@@ -146,7 +146,7 @@ public class UiPanel01_1 extends JPanel{
 		
 
 		add_bt1 = new JButton(ui_bt[2]);
-		add_bt1.setBounds(430, 190, 45, 26);
+		add_bt1.setBounds(430, 190, 51, 28);
 		add_bt1.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		add_bt1.setBorderPainted(false);
 		add_bt1.setRolloverEnabled(true);
@@ -155,7 +155,7 @@ public class UiPanel01_1 extends JPanel{
 		
 
 		add_bt2 = new JButton(ui_bt[2]);
-		add_bt2.setBounds(480, 190, 45, 26);
+		add_bt2.setBounds(480, 190, 51, 28);
 		add_bt2.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		add_bt2.setBorderPainted(false);
 		add_bt2.setRolloverEnabled(true);
@@ -164,7 +164,7 @@ public class UiPanel01_1 extends JPanel{
 		
 
 		add_bt3 = new JButton(ui_bt[2]);
-		add_bt3.setBounds(530, 190, 45, 26);
+		add_bt3.setBounds(530, 190, 51, 28);
 		add_bt3.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		add_bt3.setBorderPainted(false);
 		add_bt3.setRolloverEnabled(true);
@@ -173,7 +173,7 @@ public class UiPanel01_1 extends JPanel{
 		
 
 		add_bt4 = new JButton(ui_bt[2]);
-		add_bt4.setBounds(580, 190, 45, 26);
+		add_bt4.setBounds(580, 190, 51, 28);
 		add_bt4.setContentAreaFilled(false);// 버튼 내용영역 안채움
 		add_bt4.setBorderPainted(false);
 		add_bt4.setRolloverEnabled(true);
@@ -181,36 +181,36 @@ public class UiPanel01_1 extends JPanel{
 		add_bt4.addActionListener(new MyActionListener());
 		
 		
-		cancel_bt1 = new JButton(ui_bt[2]);
-		cancel_bt1 .setBounds(460, 190, 45, 26);
+		cancel_bt1 = new JButton(ui_bt[4]);
+		cancel_bt1 .setBounds(460, 190, 51, 28);
 		cancel_bt1 .setContentAreaFilled(false);// 버튼 내용영역 안채움
 		cancel_bt1 .setBorderPainted(false);
 		cancel_bt1 .setRolloverEnabled(true);
-		cancel_bt1 .setRolloverIcon(ui_bt[3]);
+		cancel_bt1 .setRolloverIcon(ui_bt[5]);
 		cancel_bt1 .addActionListener(new MyActionListener());
 
-		cancel_bt2 = new JButton(ui_bt[2]);
-		cancel_bt2 .setBounds(510, 190, 45, 26);
+		cancel_bt2 = new JButton(ui_bt[4]);
+		cancel_bt2 .setBounds(510, 190, 51, 28);
 		cancel_bt2 .setContentAreaFilled(false);// 버튼 내용영역 안채움
 		cancel_bt2 .setBorderPainted(false);
 		cancel_bt2 .setRolloverEnabled(true);
-		cancel_bt2 .setRolloverIcon(ui_bt[3]);
+		cancel_bt2 .setRolloverIcon(ui_bt[5]);
 		cancel_bt2 .addActionListener(new MyActionListener());
 		
-		cancel_bt3 = new JButton(ui_bt[2]);
-		cancel_bt3 .setBounds(560, 190, 45, 26);
+		cancel_bt3 = new JButton(ui_bt[4]);
+		cancel_bt3 .setBounds(560, 190, 51, 28);
 		cancel_bt3 .setContentAreaFilled(false);// 버튼 내용영역 안채움
 		cancel_bt3 .setBorderPainted(false);
 		cancel_bt3 .setRolloverEnabled(true);
-		cancel_bt3 .setRolloverIcon(ui_bt[3]);
+		cancel_bt3 .setRolloverIcon(ui_bt[5]);
 		cancel_bt3 .addActionListener(new MyActionListener());
 		
-		cancel_bt4 = new JButton(ui_bt[2]);
-		cancel_bt4 .setBounds(610, 190, 45, 26);
+		cancel_bt4 = new JButton(ui_bt[4]);
+		cancel_bt4 .setBounds(610, 190, 51, 28);
 		cancel_bt4 .setContentAreaFilled(false);// 버튼 내용영역 안채움
 		cancel_bt4 .setBorderPainted(false);
 		cancel_bt4 .setRolloverEnabled(true);
-		cancel_bt4 .setRolloverIcon(ui_bt[3]);
+		cancel_bt4 .setRolloverIcon(ui_bt[5]);
 		cancel_bt4 .addActionListener(new MyActionListener());
 		
 		
@@ -232,9 +232,9 @@ public class UiPanel01_1 extends JPanel{
 				panel01.remove(change_bt1);
 				panel01.add(add_bt1);
 				panel01.add(cancel_bt1);
-				add_bt1.setSize(45,26);
+				add_bt1.setSize(51,28);
 				add_bt1.setLocation(25,205);
-				cancel_bt1.setSize(45,26);
+				cancel_bt1.setSize(51,28);
 				cancel_bt1.setLocation(80,205);
 				nametext.setCursor(getCursor());
 				name = nametext.getText();
@@ -250,9 +250,9 @@ public class UiPanel01_1 extends JPanel{
 				panel01.remove(change_bt2);
 				panel01.add(add_bt2);
 				panel01.add(cancel_bt2);
-				add_bt2.setSize(45,26);
+				add_bt2.setSize(51,28);
 				add_bt2.setLocation(150,205);
-				cancel_bt2.setSize(45,26);
+				cancel_bt2.setSize(51,28);
 				cancel_bt2.setLocation(205,205);
 				birthtext.setCursor(getCursor());
 				birth = birthtext.getText();
@@ -267,9 +267,9 @@ public class UiPanel01_1 extends JPanel{
 				panel01.remove(change_bt3);
 				panel01.add(add_bt3);
 				panel01.add(cancel_bt3);
-				add_bt3.setSize(45,26);
+				add_bt3.setSize(51,28);
 				add_bt3.setLocation(279,205);
-				cancel_bt3.setSize(45,26);
+				cancel_bt3.setSize(51,28);
 				cancel_bt3.setLocation(334,205);
 				teltext.setCursor(getCursor());
 				tel = teltext.getText();
@@ -284,10 +284,10 @@ public class UiPanel01_1 extends JPanel{
 				panel01.remove(change_bt4);
 				panel01.add(add_bt4);
 				panel01.add(cancel_bt4);
-				add_bt4.setSize(45,26);
+				add_bt4.setSize(51,28);
 				add_bt4.setLocation(394,205);
-				cancel_bt4.setSize(45,26);
-				cancel_bt4.setLocation(439,205);
+				cancel_bt4.setSize(51,28);
+				cancel_bt4.setLocation(448,205);
 				addresstext.setCursor(getCursor());
 				address = addresstext.getText();
 				addresstext.setText("");

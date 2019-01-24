@@ -20,9 +20,10 @@ public class Button_Jinwha extends JButton implements ActionListener {
 			new ImageIcon("img//Jinwha_charfront_walk2.png"), new ImageIcon("img//Jinwha_charLeft.png"),
 			new ImageIcon("img//Jinwha_charLeft_walk1.png"), new ImageIcon("img//Jinwha_charLeft_walk2.png"),
 			new ImageIcon("img//Jinwha_charRight.png"), new ImageIcon("img//Jinwha_charRihgt_walk1.png"),
-			new ImageIcon("img//Jinwha_charRigth_walk2.png"), new ImageIcon("img//Jinwha_charfront_roll.png") };
-	static ImageIcon img2 = new ImageIcon("img//Jinwha_charRight_walk2.png");
-	static JButton jinwha = new JButton(img[3]);
+			new ImageIcon("img//Jinwha_charRigth_walk2.png"), new ImageIcon("img//Jinwha_charfront_roll.png")
+			, new ImageIcon("img//Jinwha_chair.png")};
+	
+	static JButton jinwha = new JButton(img[13]);
 	int x, y;
 	Thread t;
 	static Thread t2;
@@ -36,7 +37,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 
 	public Button_Jinwha() {
 		// setLayout(null);
-		x = 140;
+		x = 135;
 		y = 540;
 		jinwha.setBounds(x, y, 156, 156);
 		jinwha.addActionListener(this);
@@ -69,10 +70,10 @@ public class Button_Jinwha extends JButton implements ActionListener {
 			@Override
 			public void run() {
 
-				for (int i = 0; i < 73; i++) {
+				for (int i = 0; i < 74; i++) {
 
 					try {
-						if (i < 39) {
+						if (i < 40) {
 							if (i >= 2 && !(i % 4 == 0)) {
 								jinwha.setIcon(img[10]);
 								moveButton(new Point(point.x += 7, point.y));
@@ -100,7 +101,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 								jinwha.setIcon(img[2]);
 								moveButton(new Point(point.x, point.y -= 7));
 							}
-							if (i == 72) {
+							if (i == 73) {
 								jinwha.setIcon(img[3]);
 								ui_unit = new UiChange_Out();
 								uipanel01_1.nametext.setText(select.selectGetName(sno));
@@ -135,7 +136,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 			@Override
 			public void run() {
 
-				for (int i = 0; i < 73; i++) {
+				for (int i = 0; i < 74; i++) {
 					try {
 						if (i < 35) {
 							if (i >= 2 && !(i % 4 == 0)) {
@@ -156,7 +157,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 								jinwha.setIcon(img[7]);
 								moveButton(new Point(point.x -= 7, point.y));
 							}
-							if (i % 2 == 1 && i < 70) {
+							if (i % 2 == 1 ) {
 								jinwha.setIcon(img[6]);
 								moveButton(new Point(point.x -= 7, point.y));
 							}
@@ -164,8 +165,10 @@ public class Button_Jinwha extends JButton implements ActionListener {
 								jinwha.setIcon(img[8]);
 								moveButton(new Point(point.x -= 7, point.y));
 							}
-							if (i == 72) {
-								jinwha.setIcon(img[3]);
+							if (i == 73) {
+								jinwha.setIcon(img[13]);
+								MainView.click = 0;
+								moveButton(new Point(135, 540));
 								
 							}
 
@@ -192,8 +195,11 @@ public class Button_Jinwha extends JButton implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if(MainView.click == 0) {
+			MainView.click = sno;
 		move();
 		UiChange_Out.sno = sno;
+		}
 		
 		
 //		uipanel01_1.nametext.setText(select.selectGetName(sno));

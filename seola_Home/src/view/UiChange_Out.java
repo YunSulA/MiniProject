@@ -60,6 +60,10 @@ public class UiChange_Out implements WindowListener {
 			Button_Guhyup.move2();
 		} else if (sno == 7) {
 			Button_Jinwha.move2();
+		}else if(sno == 8) {
+			Button_Dunsol.move2();
+		}else if(sno == 10) {
+			Button_JungHun.move2();
 		}
 
 	}
