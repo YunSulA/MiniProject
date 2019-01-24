@@ -83,7 +83,7 @@ public class Academy_DAO_select {
 		conn = DBConnection.getConn();
 		
 		try {
-			pstmt = conn.prepareStatement("SELECT BIRTH FROM ACADEMY WHERE SNO = ?");
+			pstmt = conn.prepareStatement("SELECT * FROM ACADEMY WHERE SNO = ?");
 			pstmt.setInt(1, this.sno);
 			rs = pstmt.executeQuery();
 			rs.next();

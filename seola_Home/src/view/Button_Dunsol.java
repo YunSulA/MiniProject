@@ -8,8 +8,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
-import DAO.Academy_DAO_select;
+import DAO.Academy_DAO;
 import model.Academy;
+import service.Service_change;
+import service.Service_select;
 
 public class Button_Dunsol  extends JButton implements ActionListener{
 	int sno = 8;
@@ -26,13 +28,10 @@ public class Button_Dunsol  extends JButton implements ActionListener{
 	Thread t;
 	static Thread t2;
 	UiChange_Out ui_unit;
-	Academy_DAO_select select = new Academy_DAO_select();
-	Academy academy;
+	Academy_DAO select ;
+	static Academy academy;
 	UiPanel01_1 uipanel01_1 = new UiPanel01_1();
-	static boolean move = false;
-
-	// 구협좌석 좌표 700 , 540
-	// 목표 좌표 625 180
+	
 
 	public Button_Dunsol() {
 		// setLayout(null);
@@ -102,13 +101,17 @@ public class Button_Dunsol  extends JButton implements ActionListener{
 							if (i == 57) {
 								Dunsol.setIcon(img[3]);
 								ui_unit = new UiChange_Out();
-								uipanel01_1.nametext.setText(select.selectGetName(sno));
+								Academy academy = new Academy();
+								Service_select serSelect = Service_select.getInstance();
+								serSelect.select(academy);
+
+								uipanel01_1.nametext.setText(Academy_DAO.selectname);
+								uipanel01_1.birthtext.setText(" " + Academy_DAO.selectbirth);
+								uipanel01_1.teltext.setText(Academy_DAO.selecttel);
+								uipanel01_1.addresstext.setText("    " + Academy_DAO.selectaddress);
 
 							}
-							//기본 불린 true
-							//캐릭을 누르면 false
-							//
-
+				
 						}
 						Thread.sleep(delay);
 					} catch (InterruptedException ex) {
@@ -193,26 +196,15 @@ public class Button_Dunsol  extends JButton implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(MainView.click == 0) {
-		MainView.click = sno;
 		move();
-		UiChange_Out.sno = sno;
+		MainView.click = sno;	//움직이고 있는지 여부(움직일땐 다른캐릭터 클릭불가)
+		UiChange_Out.sno = sno;	//Ui가 닫히면 돌아갈 캐릭터가 몇번인지
+		Academy.button_check = sno;	//버튼 눌렀는지 여부
+		
+		
 		}
 
 	}
-
-//	public void select() {
-//		select = new Academy_DAO_select();
-//		for (int i = 0; sno != select.sno[i]; i++) {
-//			if (sno == select.sno[i]) {
-//				select.move = true;
-//				uipanel01_1.nametext.setText(select.name[i]);
-//				uipanel01_1.birthtext.setText(" " + select.birth[i]);
-//				uipanel01_1.teltext.setText(select.tel[i]);
-//				uipanel01_1.addresstext.setText("     " + select.address[i]);
-//
-//			}
-//
-//		}
 
 	public JButton getButton() {
 		return Dunsol;

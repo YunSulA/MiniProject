@@ -28,6 +28,44 @@ public class Service_change {
 			DBResourceReturn.close(conn);
 		}
 	}
-
+	
+	public static void birthChange(Academy academy) {
+		Connection conn = null;
+		try {
+			conn = DBConnection.getConn();
+			Academy_DAO academyDao = Academy_DAO.getInstance();
+			academyDao.changeBirthDao(conn, academy);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			DBResourceReturn.close(conn);
+		}
+	}
+	
+	public static void telChange(Academy academy) {
+		Connection conn = null;
+		try {
+			conn = DBConnection.getConn();
+			Academy_DAO academyDao = Academy_DAO.getInstance();
+			academyDao.changeTelDao(conn, academy);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			DBResourceReturn.close(conn);
+		}
+	}
+	
+	public static void addressChange(Academy academy) {
+		Connection conn = null;
+		try {
+			conn = DBConnection.getConn();
+			Academy_DAO academyDao = Academy_DAO.getInstance();
+			academyDao.changeAddressDao(conn, academy);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			DBResourceReturn.close(conn);
+		}
+	}
 
 }

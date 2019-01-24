@@ -9,8 +9,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
+import DAO.Academy_DAO;
 import DAO.Academy_DAO_select;
 import model.Academy;
+import service.Service_select;
 
 public class Button_Jinwha extends JButton implements ActionListener {
 	int sno = 7;
@@ -104,9 +106,14 @@ public class Button_Jinwha extends JButton implements ActionListener {
 							if (i == 73) {
 								jinwha.setIcon(img[3]);
 								ui_unit = new UiChange_Out();
-								uipanel01_1.nametext.setText(select.selectGetName(sno));
-								uipanel01_1.birthtext.setText(select.selectGetBirth(sno));
+								Academy academy = new Academy();
+								Service_select serSelect = Service_select.getInstance();
+								serSelect.select(academy);
 								
+								uipanel01_1.nametext.setText(Academy_DAO.selectname);
+								uipanel01_1.birthtext.setText(" " + Academy_DAO.selectbirth);
+								uipanel01_1.teltext.setText(Academy_DAO.selecttel);
+								uipanel01_1.addresstext.setText("    " + Academy_DAO.selectaddress);
 
 							}
 							
@@ -196,14 +203,12 @@ public class Button_Jinwha extends JButton implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(MainView.click == 0) {
-			MainView.click = sno;
 		move();
-		UiChange_Out.sno = sno;
+		MainView.click = sno;	//캐릭터가 움직이고있는지 여부(움직이고있으면 다른캐릭터 클릭불가)
+		UiChange_Out.sno = sno;//Ui가 닫히고 돌아갈 캐릭터의 sno 저장
+		Academy.button_check = sno;//버튼을 눌렀는지 여부
 		}
 		
-		
-//		uipanel01_1.nametext.setText(select.selectGetName(sno));
-//		System.out.println(select.selectGetName(sno));
 	}
 	
 	
@@ -211,20 +216,6 @@ public class Button_Jinwha extends JButton implements ActionListener {
 		
 	}
 	
-
-//	public void select() {
-//		select = new Academy_DAO_select();
-//		for (int i = 0; sno != select.sno[i]; i++) {
-//			if (sno == select.sno[i+1]) {
-//				select.move = true;
-//				uipanel01_1.nametext.setText(select.name[i+1]);
-//				uipanel01_1.birthtext.setText(" " + select.birth[i+1]);
-//				uipanel01_1.teltext.setText(select.tel[i+1]);
-//				uipanel01_1.addresstext.setText("     " + select.address[i+1]);
-//			}
-//
-//		}
-//	}
 
 	public JButton getButton() {
 		return jinwha;
