@@ -107,10 +107,11 @@ public class Button_Dunsol  extends JButton implements ActionListener{
 								serSelect.select(academy);
 
 								uipanel01_1.nametext.setText(Academy_DAO.selectname);
-								uipanel01_1.birthtext.setText(" " + Academy_DAO.selectbirth);
+								uipanel01_1.birthtext.setText(Academy_DAO.selectbirth);
 								uipanel01_1.teltext.setText(Academy_DAO.selecttel);
-								uipanel01_1.addresstext.setText("    " + Academy_DAO.selectaddress);
+								uipanel01_1.addresstext.setText(Academy_DAO.selectaddress);
 								uipanel01_2.majortext.setText(Academy_DAO.selectmajor);
+								uipanel01_2.tributetext.setText(Academy_DAO.selecttribute);
 
 							}
 				

@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import model.Academy;
 import service.Service_change;
@@ -20,6 +20,8 @@ public class UiPanel01_2 extends JPanel {
 	private JPanel panel01 = new MyPanel01();
 	public static JTextArea majortext = new JTextArea();
 	public static JTextArea tributetext = new JTextArea();
+	
+	
 	static String major;
 	static String tribute;
 	private JButton change_bt1;
@@ -66,7 +68,7 @@ public class UiPanel01_2 extends JPanel {
 		tributetext.setFont(f1);
 		tributetext.setCursor(null);
 		tributetext.setEditable(false);
-		tributetext.setBackground(new Color(255, 38, 38));
+		tributetext.setBackground(new Color(40, 38, 38));
 
 		change_bt1 = new JButton(ui_bt[0]);
 		change_bt1.setBounds(38, 200, 75, 43);
@@ -193,6 +195,18 @@ public class UiPanel01_2 extends JPanel {
 				panel01.remove(add_bt2);
 				panel01.remove(cancle_bt2);
 				panel01.add(change_bt2);
+				change_bt2.setSize(75, 43);
+				change_bt2.setLocation(378, 200);
+				tributetext.setCursor(null);
+				tributetext.setEditable(false);
+				tributetext.setBackground(new Color(40, 38, 38));
+				tributetext.setText(tributetext.getText());
+				revalidate();
+				repaint();
+				Service_change serchange = Service_change.getInstance();
+				serchange.tributeChange(academy);
+				academy.tributeB = true;
+				
 			}
 			
 			else if(e.getSource() == cancle_bt1) {
@@ -208,6 +222,20 @@ public class UiPanel01_2 extends JPanel {
 				revalidate();
 				repaint();
 				academy.majorB = false;
+			}
+			else if(e.getSource() == cancle_bt2) {
+				panel01.remove(add_bt2);
+				panel01.remove(cancle_bt2);
+				panel01.add(change_bt2);
+				change_bt2.setSize(75, 43);
+				change_bt2.setLocation(378, 200);
+				tributetext.setCursor(null);
+				tributetext.setEditable(false);
+				tributetext.setBackground(new Color(40, 38, 38));
+				tributetext.setText(tribute);
+				revalidate();
+				repaint();
+				academy.tributeB = false;
 			}
 
 		}

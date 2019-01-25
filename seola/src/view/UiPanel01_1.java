@@ -330,7 +330,7 @@ public class UiPanel01_1 extends JPanel{
 					academy = new Academy();
 					Service_change serchange = Service_change.getInstance();
 					serchange.birthChange(academy);
-					academy.nameB = false;
+					academy.birthB = false;
 				}
 			}
 
@@ -341,8 +341,8 @@ public class UiPanel01_1 extends JPanel{
 					JOptionPane.showMessageDialog(null, "전화번호는 비워둘 수 없습니다.", "TEL_EMPTY_ERROR", 0);
 				} else {
 					academy = new Academy();
-					Service_select serselect = Service_select.getInstance();
-					serselect.telselect(academy);
+					Service_change serchange = Service_change.getInstance();
+					serchange.telChange(academy);
 					// ▼ 전화번호 중복검사 (포함검사 : Contains)
 					// Dao쪽에서 뜨는 에러문을 뷰에서 팝업창으로 에러팝업을 띄우는 시도도 해보았으나, 그렇게 하면 
 					// 에러팝업은 잘 뜨지만 팝업을 닫은 후 Ui패널의 값은 저장되면 안되는 중복된 전화번호값으로 출력이 바뀌어있는 상태였기 때문에 뷰에서 if문을 걸었다. 
@@ -363,7 +363,8 @@ public class UiPanel01_1 extends JPanel{
 //						academy = new Academy();
 //						Service_change serchange = Service_change.getInstance();
 //						serchange.telChange(academy);
-						academy.nameB = false;
+						academy.telB = false;
+						
 					}
 				}
 			}
@@ -386,7 +387,7 @@ public class UiPanel01_1 extends JPanel{
 					academy = new Academy();
 					Service_change serchange = Service_change.getInstance();
 					serchange.addressChange(academy);
-					academy.nameB = false;
+					academy.addressB = false;
 				}
 			}
 
