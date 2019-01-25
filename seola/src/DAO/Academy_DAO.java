@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import model.Academy;
 import util.DBResourceReturn;
 import view.UiPanel01_1;
+import view.UiPanel01_2;
 
 public class Academy_DAO {
 	public static int sno = 1;
@@ -111,7 +112,7 @@ public class Academy_DAO {
 		
 		try {
 			pstmt=conn.prepareStatement("UPDATE ACADEMY SET MAJOR=? WHERE SNO=?");
-			pstmt.setString(1, UiPanel01_1.majortext.getText());	
+			pstmt.setString(1, UiPanel01_2.majortext.getText());	
 			pstmt.setInt(2, Academy.button_check);	
 			return pstmt.executeUpdate();
 		} finally {

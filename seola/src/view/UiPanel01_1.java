@@ -29,7 +29,7 @@ public class UiPanel01_1 extends JPanel{
 	static String birth;
 	static String tel;
 	static String address;
-	private Color c1 = new Color(167, 93, 67);
+	private Color c1 = new Color(175, 138, 125);
 	private Font f1 = new Font("±Ã¼­", Font.BOLD, 20);
 	private JButton change_bt1;
 	private JButton change_bt2;
@@ -84,7 +84,6 @@ public class UiPanel01_1 extends JPanel{
 		birthtext.setFont(f1);
 		birthtext.setCursor(null);
 		birthtext.setEditable(false);
-
 		birthtext.setBackground(new Color(40, 38, 38));
 
 		teltext.setSize(100, 50);
@@ -234,7 +233,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt1.setLocation(80, 205);
 				nametext.setCursor(getCursor());
 				name = nametext.getText();
-				nametext.setText("");
+				nametext.setText(name);
 				nametext.setEditable(true);
 				nametext.setBackground(new Color(255, 255, 255));
 				revalidate();
@@ -251,7 +250,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt2.setLocation(205, 205);
 				birthtext.setCursor(getCursor());
 				birth = birthtext.getText();
-				birthtext.setText("");
+				birthtext.setText(birth);
 				birthtext.setEditable(true);
 				birthtext.setBackground(new Color(255, 255, 255));
 				revalidate();
@@ -268,7 +267,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt3.setLocation(334, 205);
 				teltext.setCursor(getCursor());
 				tel = teltext.getText();
-				teltext.setText("");
+				teltext.setText(tel);
 				teltext.setEditable(true);
 				teltext.setBackground(new Color(255, 255, 255));
 				revalidate();
@@ -285,7 +284,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt4.setLocation(445, 205);
 				addresstext.setCursor(getCursor());
 				address = addresstext.getText();
-				addresstext.setText("");
+				addresstext.setText(address);
 				addresstext.setEditable(true);
 				addresstext.setBackground(new Color(255, 255, 255));
 				revalidate();

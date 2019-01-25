@@ -43,8 +43,7 @@ public class MainView extends JFrame implements ActionListener {
         panel.add(jinwha);
         panel.add(dunsol);
         panel.add(junghun);
-       
-       
+ 
 	}
           
 
