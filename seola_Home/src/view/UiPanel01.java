@@ -28,7 +28,7 @@ public class UiPanel01 extends JPanel {
 	static JTextArea tribute = new JTextArea();
 	private static UiChange win;
 	public static UiPanel01_1 uipanel01_1 = new UiPanel01_1();
-
+	public static UiPanel01_2 uipanel01_2 = new UiPanel01_2();
 	private JButton menu1;
 	private JButton menu2;
 	private JButton menu3;
@@ -48,9 +48,13 @@ public class UiPanel01 extends JPanel {
 		panel01.setSize(750, 540);
 		panel01.setLayout(null);
 		panel01.add(uipanel01_1);
+		panel01.add(uipanel01_2);
 
 		uipanel01_1.setSize(515, 257);
 		uipanel01_1.setLocation(223, 8);
+		
+		uipanel01_2.setSize(515,257);
+		uipanel01_2.setLocation(221, 272);
 
 		menu1 = new JButton();
 		menu1.setBounds(40, 40, 140, 80);

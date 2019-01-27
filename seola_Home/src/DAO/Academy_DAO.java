@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import model.Academy;
 import util.DBResourceReturn;
 import view.UiPanel01_1;
+import view.UiPanel01_2;
 
 public class Academy_DAO {
 	public static int sno = 1;
@@ -17,7 +18,7 @@ public class Academy_DAO {
 	public static String selecttel;
 	public static String selectaddress;
 	public static String selectmajor;
-	public static int selecttribute;
+	public static String selecttribute;
 	public static int selectdatabase;
 	public static int selectjava;
 	public static int selectjavascript;
@@ -111,7 +112,7 @@ public class Academy_DAO {
 		
 		try {
 			pstmt=conn.prepareStatement("UPDATE ACADEMY SET MAJOR=? WHERE SNO=?");
-			pstmt.setString(1, UiPanel01_1.majortext.getText());	
+			pstmt.setString(1, UiPanel01_2.majortext.getText());	
 			pstmt.setInt(2, Academy.button_check);	
 			return pstmt.executeUpdate();
 		} finally {
@@ -124,7 +125,7 @@ public class Academy_DAO {
 		
 		try {
 			pstmt=conn.prepareStatement("UPDATE ACADEMY SET TRIBUTE=? WHERE SNO=?");
-			pstmt.setInt(1, 1);	
+			pstmt.setInt(1, Integer.parseInt(UiPanel01_2.tributetext.getText()));	
 			pstmt.setInt(2, Academy.button_check);	
 			return pstmt.executeUpdate();
 		} finally {
@@ -250,13 +251,13 @@ public class Academy_DAO {
 				selecttel = rs.getString(4);
 				selectaddress = rs.getString(5);
 				selectmajor = rs.getString(6);
-				selecttribute = rs.getInt(7);
-				selectdatabase = rs.getInt(8);
-				selectjava = rs.getInt(9);
-				selectjavascript = rs.getInt(10);
-				selectjsp = rs.getInt(11);
-				selectattendance = rs.getDouble(12);
-				selectsurvey = rs.getString(13);
+				selecttribute = Integer.toString(rs.getInt(8));//textarea에 스트링밖에 안들어가서 불러올때 스트링으로 바꿈..
+				selectdatabase = rs.getInt(9);
+				selectjava = rs.getInt(10);
+				selectjavascript = rs.getInt(11);
+				selectjsp = rs.getInt(12);
+				selectattendance = rs.getDouble(13);
+				selectsurvey = rs.getString(14);
 			}
 		} finally {	// finally 부분에서 닫아주는 것들이 여기서는 rs도 닫아야하는건지 확실히 모르겠다. 아마 맞겠지? 
 			DBResourceReturn.close(rs);

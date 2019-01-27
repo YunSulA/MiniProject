@@ -23,6 +23,8 @@ public class MainView extends JFrame implements ActionListener {
 	JButton dunsol = Dunsol.getButton();
 	Button_JungHun JungHun = new Button_JungHun();
 	JButton junghun = JungHun.getButton();
+	Button_Gyeom Gyeom = new Button_Gyeom();
+	JButton gyeom = Gyeom.getButton();
 	JFrame frame = new JFrame("박성정 선생님 취업반");
 	private JPanel panel = new MyPanel();
 	static int f_width = 1250;
@@ -43,8 +45,8 @@ public class MainView extends JFrame implements ActionListener {
         panel.add(jinwha);
         panel.add(dunsol);
         panel.add(junghun);
-       
-       
+        panel.add(gyeom);
+ 
 	}
           
 

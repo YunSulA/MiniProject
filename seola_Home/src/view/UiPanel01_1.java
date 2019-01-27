@@ -29,7 +29,7 @@ public class UiPanel01_1 extends JPanel{
 	static String birth;
 	static String tel;
 	static String address;
-	private Color c1 = new Color(167, 93, 67);
+	private Color c1 = new Color(175, 138, 125);
 	private Font f1 = new Font("궁서", Font.BOLD, 20);
 	private JButton change_bt1;
 	private JButton change_bt2;
@@ -84,7 +84,6 @@ public class UiPanel01_1 extends JPanel{
 		birthtext.setFont(f1);
 		birthtext.setCursor(null);
 		birthtext.setEditable(false);
-
 		birthtext.setBackground(new Color(40, 38, 38));
 
 		teltext.setSize(100, 50);
@@ -234,7 +233,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt1.setLocation(80, 205);
 				nametext.setCursor(getCursor());
 				name = nametext.getText();
-				nametext.setText("");
+				nametext.setText(name);
 				nametext.setEditable(true);
 				nametext.setBackground(new Color(255, 255, 255));
 				revalidate();
@@ -251,7 +250,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt2.setLocation(205, 205);
 				birthtext.setCursor(getCursor());
 				birth = birthtext.getText();
-				birthtext.setText("");
+				birthtext.setText(birth);
 				birthtext.setEditable(true);
 				birthtext.setBackground(new Color(255, 255, 255));
 				revalidate();
@@ -268,7 +267,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt3.setLocation(334, 205);
 				teltext.setCursor(getCursor());
 				tel = teltext.getText();
-				teltext.setText("");
+				teltext.setText(tel);
 				teltext.setEditable(true);
 				teltext.setBackground(new Color(255, 255, 255));
 				revalidate();
@@ -285,7 +284,7 @@ public class UiPanel01_1 extends JPanel{
 				cancel_bt4.setLocation(445, 205);
 				addresstext.setCursor(getCursor());
 				address = addresstext.getText();
-				addresstext.setText("");
+				addresstext.setText(address);
 				addresstext.setEditable(true);
 				addresstext.setBackground(new Color(255, 255, 255));
 				revalidate();
@@ -331,7 +330,7 @@ public class UiPanel01_1 extends JPanel{
 					academy = new Academy();
 					Service_change serchange = Service_change.getInstance();
 					serchange.birthChange(academy);
-					academy.nameB = false;
+					academy.birthB = false;
 				}
 			}
 
@@ -342,8 +341,8 @@ public class UiPanel01_1 extends JPanel{
 					JOptionPane.showMessageDialog(null, "전화번호는 비워둘 수 없습니다.", "TEL_EMPTY_ERROR", 0);
 				} else {
 					academy = new Academy();
-					Service_select serselect = Service_select.getInstance();
-					serselect.telselect(academy);
+					Service_change serchange = Service_change.getInstance();
+					serchange.telChange(academy);
 					// ▼ 전화번호 중복검사 (포함검사 : Contains)
 					// Dao쪽에서 뜨는 에러문을 뷰에서 팝업창으로 에러팝업을 띄우는 시도도 해보았으나, 그렇게 하면 
 					// 에러팝업은 잘 뜨지만 팝업을 닫은 후 Ui패널의 값은 저장되면 안되는 중복된 전화번호값으로 출력이 바뀌어있는 상태였기 때문에 뷰에서 if문을 걸었다. 
@@ -364,7 +363,8 @@ public class UiPanel01_1 extends JPanel{
 //						academy = new Academy();
 //						Service_change serchange = Service_change.getInstance();
 //						serchange.telChange(academy);
-						academy.nameB = false;
+						academy.telB = false;
+						
 					}
 				}
 			}
@@ -387,7 +387,7 @@ public class UiPanel01_1 extends JPanel{
 					academy = new Academy();
 					Service_change serchange = Service_change.getInstance();
 					serchange.addressChange(academy);
-					academy.nameB = false;
+					academy.addressB = false;
 				}
 			}
 
