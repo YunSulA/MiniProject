@@ -36,8 +36,8 @@ public class Button_Gyeom extends Button implements ActionListener {
 
 	public Button_Gyeom() {
 		// setLayout(null);
-		x = 953;
-		y = 365;
+		x = 264;
+		y = 540;
 		Gyeom.setBounds(x, y, 156, 156);
 		Gyeom.addActionListener(this);
 		Gyeom.setContentAreaFilled(false);// 버튼 내용영역 안채움
@@ -70,22 +70,22 @@ public class Button_Gyeom extends Button implements ActionListener {
 				for (int i = 0; i < 58; i++) {
 
 					try {
-						if (i < 40) {
+						if (i < 28) {
 							if (i >= 2 && !(i % 4 == 0)) {
-								Gyeom.setIcon(img[7]);
-								moveButton(new Point(point.x -= 7, point.y));
+								Gyeom.setIcon(img[10]);
+								moveButton(new Point(point.x += 7, point.y));
 
 							}
 							if (i % 2 == 1) {
-								Gyeom.setIcon(img[6]);
-								moveButton(new Point(point.x -= 7, point.y));
+								Gyeom.setIcon(img[9]);
+								moveButton(new Point(point.x += 7, point.y));
 							}
 							if (i >= 4 && i % 4 == 0) {
-								Gyeom.setIcon(img[8]);
-								moveButton(new Point(point.x -= 7, point.y));
+								Gyeom.setIcon(img[11]);
+								moveButton(new Point(point.x += 7, point.y));
 							}
 
-						} else if (i >= 40) {
+						} else if (i >= 28) {
 
 							if (i >= 2 && !(i % 4 == 0)) {
 								Gyeom.setIcon(img[1]);
@@ -112,6 +112,7 @@ public class Button_Gyeom extends Button implements ActionListener {
 								uipanel01_1.addresstext.setText(Academy_DAO.selectaddress);
 								uipanel01_2.majortext.setText(Academy_DAO.selectmajor);
 								uipanel01_2.tributetext.setText(Academy_DAO.selecttribute);
+								uipanel01_2.itcourseBoolean();
 
 							}
 				
@@ -136,9 +137,9 @@ public class Button_Gyeom extends Button implements ActionListener {
 			@Override
 			public void run() {
 
-				for (int i = 0; i < 59; i++) {
+				for (int i = 0; i < 58; i++) {
 					try {
-						if (i < 20) {
+						if (i < 30) {
 							if (i >= 2 && !(i % 4 == 0)) {
 								Gyeom.setIcon(img[4]);
 								moveButton(new Point(point.x, point.y += 7));
@@ -153,24 +154,24 @@ public class Button_Gyeom extends Button implements ActionListener {
 								moveButton(new Point(point.x, point.y += 7));
 							}
 
-						} else if (i >= 21) {
+						} else if (i >= 30) {
 
 							if (i >= 2 && !(i % 4 == 0)) {
-								Gyeom.setIcon(img[10]);
-								moveButton(new Point(point.x += 7, point.y));
+								Gyeom.setIcon(img[7]);
+								moveButton(new Point(point.x -= 7, point.y));
 							}
 							if (i % 2 == 1 ) {
-								Gyeom.setIcon(img[9]);
-								moveButton(new Point(point.x += 7, point.y));
+								Gyeom.setIcon(img[6]);
+								moveButton(new Point(point.x -= 7, point.y));
 							}
 							if (i >= 4 && i % 4 == 0) {
-								Gyeom.setIcon(img[11]);
-								moveButton(new Point(point.x += 7, point.y));
+								Gyeom.setIcon(img[8]);
+								moveButton(new Point(point.x -= 7, point.y));
 							}
-							if (i == 58) {
+							if (i == 57) {
 								Gyeom.setIcon(img[13]);
 								MainView.click = 0;
-								moveButton(new Point(953, 365));
+								moveButton(new Point(264, 540));
 							}
 
 						}

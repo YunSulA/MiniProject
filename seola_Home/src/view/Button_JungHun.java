@@ -113,6 +113,7 @@ public class Button_JungHun extends JButton implements ActionListener{
 								uipanel01_1.addresstext.setText(Academy_DAO.selectaddress);
 								uipanel01_2.majortext.setText(Academy_DAO.selectmajor);
 								uipanel01_2.tributetext.setText(Academy_DAO.selecttribute);
+								uipanel01_2.itcourseBoolean();
 
 							}
 							

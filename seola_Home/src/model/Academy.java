@@ -11,6 +11,7 @@ public class Academy {
 		private String tel;
 		private String address;
 		private String major;
+		private String itcourse;
 		private int tribute;	// 조공횟수
 		private int databaseScore;
 		private int javaScore;
@@ -25,6 +26,7 @@ public class Academy {
 		public static boolean addressB = false;
 		public static boolean surveyB = false;
 		public static boolean majorB = false;
+		public static boolean itcourseB = false;
 		public static boolean tributeB = false;
 		public static boolean databaseScoreB = false;
 		public static boolean javaScoreB = false;
@@ -36,13 +38,14 @@ public class Academy {
 		public Academy() { }
 		
 		// 인원추가용 전체 생성자  
-		public Academy(int sno, String name, String birth, String tel, String address, String major, int tribute, int database, int java, int script, int jsp, double attendance, String survey) {
+		public Academy(int sno, String name, String birth, String tel, String address, String major, String itcourse, int tribute, int database, int java, int script, int jsp, double attendance, String survey) {
 			this.sno = sno;
 			this.name = name;
 			this.birth = birth;
 			this.tel = tel;
 			this.address = address;
 			this.major = major;
+			this.itcourse = itcourse;
 			this.tribute = tribute;
 			this.databaseScore = database;
 			this.javaScore = java;
@@ -52,7 +55,7 @@ public class Academy {
 			this.survey = survey;
 		}
 		
-		// String 1개 타입 생성자 ( 이름, 생일, 전화번호, 주소, 전공, 설문 )
+		// String 1개 타입 생성자 ( 이름, 생일, 전화번호, 주소, 전공, 단과반, 설문 )
 		public Academy(String str) {
 			if (nameB) {
 				this.name = str;
@@ -68,6 +71,9 @@ public class Academy {
 			}
 			if (majorB) {
 				this.major = str;
+			}
+			if (itcourseB) {
+				this.itcourse = itcourse;
 			}
 			if (surveyB) {
 				this.survey = str;
@@ -149,6 +155,14 @@ public class Academy {
 
 		public void setMajor(String major) {
 			this.major = major;
+		}
+		
+		public String getItcourse() {
+			return itcourse;
+		}
+
+		public void setItcourse(String itcourse) {
+			this.itcourse = itcourse;
 		}
 
 		public int getTribute() {

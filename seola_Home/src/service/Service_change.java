@@ -93,5 +93,19 @@ public class Service_change {
 			DBResourceReturn.close(conn);
 		}
 	}
+	
+	public static void itcourseChange(Academy academy) {
+		Connection conn = null;
+		try {
+			conn = DBConnection.getConn();
+			Academy_DAO academyDao = Academy_DAO.getInstance();
+			academyDao.chageItcourseDao(conn, academy);
+			
+		}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			DBResourceReturn.close(conn);
+		}
+			}
 
 }

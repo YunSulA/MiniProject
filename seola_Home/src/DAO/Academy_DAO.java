@@ -19,6 +19,7 @@ public class Academy_DAO {
 	public static String selectaddress;
 	public static String selectmajor;
 	public static String selecttribute;
+	public static String selectitcourse;
 	public static int selectdatabase;
 	public static int selectjava;
 	public static int selectjavascript;
@@ -126,6 +127,19 @@ public class Academy_DAO {
 		try {
 			pstmt=conn.prepareStatement("UPDATE ACADEMY SET TRIBUTE=? WHERE SNO=?");
 			pstmt.setInt(1, Integer.parseInt(UiPanel01_2.tributetext.getText()));	
+			pstmt.setInt(2, Academy.button_check);	
+			return pstmt.executeUpdate();
+		} finally {
+			DBResourceReturn.close(pstmt);
+		}
+	}
+	
+	public int chageItcourseDao(Connection conn, Academy academy) throws SQLException {
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt=conn.prepareStatement("UPDATE ACADEMY SET ITCOURSE = ? WHERE SNO=?");
+			pstmt.setString(1, UiPanel01_2.test2);	
 			pstmt.setInt(2, Academy.button_check);	
 			return pstmt.executeUpdate();
 		} finally {
@@ -251,6 +265,7 @@ public class Academy_DAO {
 				selecttel = rs.getString(4);
 				selectaddress = rs.getString(5);
 				selectmajor = rs.getString(6);
+				selectitcourse = rs.getString(7);
 				selecttribute = Integer.toString(rs.getInt(8));//textarea에 스트링밖에 안들어가서 불러올때 스트링으로 바꿈..
 				selectdatabase = rs.getInt(9);
 				selectjava = rs.getInt(10);
