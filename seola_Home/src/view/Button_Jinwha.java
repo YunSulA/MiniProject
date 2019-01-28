@@ -44,7 +44,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 
 	public Button_Jinwha() {
 		// setLayout(null);
-		x = 135;
+		x = 137;
 		y = 540;
 		jinwha.setBounds(x, y, 156, 156);
 		jinwha.addActionListener(this);

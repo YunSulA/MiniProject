@@ -30,6 +30,21 @@ public class Service_select {
 		}
 	}
 	
+	public static void selectsno(Academy academy) {
+		Connection conn = null;
+		
+		try {
+			conn = DBConnection.getConn();
+			Academy_DAO academyDao = Academy_DAO.getInstance();
+			academyDao.selectSno(conn,academy);
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			DBResourceReturn.close(conn);
+		}
+	}
+	
 	public static void telselect(Academy academy) {
 		Connection conn = null;
 		
