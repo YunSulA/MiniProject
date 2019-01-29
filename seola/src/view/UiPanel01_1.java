@@ -19,8 +19,8 @@ import model.Academy;
 import service.Service_change;
 import service.Service_select;
 
-public class UiPanel01_1 extends JPanel{
-	private JPanel panel01 = new MyPanel01();
+public class UiPanel01_1 extends JPanel {
+	JPanel panel01 = new MyPanel01();
 	public static JTextArea nametext = new JTextArea();
 	public static JTextArea birthtext = new JTextArea();
 	public static JTextArea teltext = new JTextArea();
@@ -29,25 +29,25 @@ public class UiPanel01_1 extends JPanel{
 	static String birth;
 	static String tel;
 	static String address;
-	private Color c1 = new Color(175, 138, 125);
-	private Font f1 = new Font("궁서", Font.BOLD, 20);
-	private JButton change_bt1;
-	private JButton change_bt2;
-	private JButton change_bt3;
-	private JButton change_bt4;
-	private JButton add_bt1;
-	private JButton add_bt2;
-	private JButton add_bt3;
-	private JButton add_bt4;
-	private JButton cancel_bt1;
-	private JButton cancel_bt2;
-	private JButton cancel_bt3;
-	private JButton cancel_bt4;
+	public static Color c1 = new Color(175, 138, 125);
+	public static Font f1 = new Font("궁서", Font.BOLD, 20);
+	public  JButton change_bt1;
+	public  JButton change_bt2;
+	public  JButton change_bt3;
+	public  JButton change_bt4;
+	public  JButton add_bt1;
+	public  JButton add_bt2;
+	public  JButton add_bt3;
+	public  JButton add_bt4;
+	public  JButton cancel_bt1;
+	public  JButton cancel_bt2;
+	public  JButton cancel_bt3;
+	public  JButton cancel_bt4;
 	Academy academy = new Academy();
 
 	ImageIcon ui_bt[] = { new ImageIcon("img\\Change_bt.png"), new ImageIcon("img\\Change_bt_roll.png"),
-			new ImageIcon("img\\Add_bt3.png"), new ImageIcon("img\\Add_bt3_roll.png"),  
-			new ImageIcon("img\\Cancel_bt2.png"), new ImageIcon("img\\Cancel_bt2_roll.png")};
+			new ImageIcon("img\\Add_bt3.png"), new ImageIcon("img\\Add_bt3_roll.png"),
+			new ImageIcon("img\\Cancel_bt2.png"), new ImageIcon("img\\Cancel_bt2_roll.png") };
 
 	public UiPanel01_1() {
 
@@ -209,7 +209,9 @@ public class UiPanel01_1 extends JPanel{
 		cancel_bt4.setRolloverIcon(ui_bt[5]);
 		cancel_bt4.addActionListener(new MyActionListener());
 
+
 	}
+	
 
 	class MyPanel01 extends JPanel {
 		@Override
@@ -287,11 +289,12 @@ public class UiPanel01_1 extends JPanel{
 				addresstext.setText(address);
 				addresstext.setEditable(true);
 				addresstext.setBackground(new Color(255, 255, 255));
+				
 				revalidate();
 				repaint();
 				academy.addressB = true;
 
-			} else if (e.getSource() == add_bt1) {
+			} else if (e.getSource() == add_bt1  ) {
 				if (nametext.getText().length() == 0) { // 입력값이 null이면 오류
 					JOptionPane.showMessageDialog(null, "이름은 비워둘 수 없습니다.", "NAME_EMPTY_ERROR", 0);
 				} else {
@@ -312,7 +315,9 @@ public class UiPanel01_1 extends JPanel{
 					academy.nameB = false;
 				}
 
-			} else if (e.getSource() == add_bt2) {
+			}
+			
+			else if (e.getSource() == add_bt2) {
 				if (birthtext.getText().length() != 6) { // 입력값이 null이면 오류
 					JOptionPane.showMessageDialog(null, "생년월일은 6자리 숫자로 입력해주세요.", "BIRTH_EMPTY_ERROR", 0);
 				} else {
@@ -332,7 +337,7 @@ public class UiPanel01_1 extends JPanel{
 					serchange.birthChange(academy);
 					academy.birthB = false;
 				}
-			}
+			} 
 
 			else if (e.getSource() == add_bt3) {
 				if (teltext.getText().length() > 14) { // 14자리 이상 입력했을 때
@@ -344,8 +349,9 @@ public class UiPanel01_1 extends JPanel{
 					Service_change serchange = Service_change.getInstance();
 					serchange.telChange(academy);
 					// ▼ 전화번호 중복검사 (포함검사 : Contains)
-					// Dao쪽에서 뜨는 에러문을 뷰에서 팝업창으로 에러팝업을 띄우는 시도도 해보았으나, 그렇게 하면 
-					// 에러팝업은 잘 뜨지만 팝업을 닫은 후 Ui패널의 값은 저장되면 안되는 중복된 전화번호값으로 출력이 바뀌어있는 상태였기 때문에 뷰에서 if문을 걸었다. 
+					// Dao쪽에서 뜨는 에러문을 뷰에서 팝업창으로 에러팝업을 띄우는 시도도 해보았으나, 그렇게 하면
+					// 에러팝업은 잘 뜨지만 팝업을 닫은 후 Ui패널의 값은 저장되면 안되는 중복된 전화번호값으로 출력이 바뀌어있는 상태였기 때문에 뷰에서
+					// if문을 걸었다.
 					if (Arrays.asList(Academy_DAO.teloverlap).contains(teltext.getText())) {
 						JOptionPane.showMessageDialog(null, "이미 등록된 전화번호입니다.", "TEL_OVERLAP_ERROR", 0);
 					} else {
@@ -364,7 +370,7 @@ public class UiPanel01_1 extends JPanel{
 //						Service_change serchange = Service_change.getInstance();
 //						serchange.telChange(academy);
 						academy.telB = false;
-						
+
 					}
 				}
 			}
@@ -381,7 +387,7 @@ public class UiPanel01_1 extends JPanel{
 					addresstext.setCursor(null);
 					addresstext.setEditable(false);
 					addresstext.setBackground(new Color(40, 38, 38));
-					addresstext.setText(" "+addresstext.getText());
+					addresstext.setText(" " + addresstext.getText());
 					revalidate();
 					repaint();
 					academy = new Academy();
@@ -391,7 +397,7 @@ public class UiPanel01_1 extends JPanel{
 				}
 			}
 
-			else if (e.getSource() == cancel_bt1) {
+			else if (e.getSource() == cancel_bt1 ) {
 				panel01.remove(add_bt1);
 				panel01.remove(cancel_bt1);
 				panel01.add(change_bt1);
@@ -404,7 +410,9 @@ public class UiPanel01_1 extends JPanel{
 				revalidate();
 				repaint();
 				academy.nameB = false;
-			} else if (e.getSource() == cancel_bt2) {
+			}
+			
+			else if (e.getSource() == cancel_bt2) {
 				panel01.remove(add_bt2);
 				panel01.remove(cancel_bt2);
 				panel01.add(change_bt2);
@@ -443,8 +451,60 @@ public class UiPanel01_1 extends JPanel{
 				revalidate();
 				repaint();
 				academy.addressB = false;
-				
+
 			}
 		}
 	}
+	
+//	// 수정을 눌러 텍스트박스 활성화 된 상태로 Ui를 꺼도 다시 다음사람의 텍스트박스가 비활성화 되게 설정
+//		public void textBoxClose() {
+//				panel01.remove(add_bt1);
+//				panel01.remove(cancel_bt1);
+//				panel01.add(change_bt1);
+//				change_bt1.setSize(75, 43);
+//				change_bt1.setLocation(30, 200);
+//				nametext.setCursor(null);
+//				nametext.setEditable(false);
+//				nametext.setBackground(new Color(40, 38, 38));
+//				nametext.setText(nametext.getText());
+//				revalidate();
+//				repaint();
+//				
+//				panel01.remove(add_bt2);
+//				panel01.remove(cancel_bt2);
+//				panel01.add(change_bt2);
+//				change_bt2.setSize(75, 43);
+//				change_bt2.setLocation(160, 200);
+//				birthtext.setCursor(null);
+//				birthtext.setEditable(false);
+//				birthtext.setBackground(new Color(40, 38, 38));
+//				birthtext.setText(birthtext.getText());
+//				revalidate();
+//				repaint();
+//				
+//				panel01.remove(add_bt3);
+//				panel01.remove(cancel_bt3);
+//				panel01.add(change_bt3);
+//				change_bt3.setSize(75, 43);
+//				change_bt3.setLocation(290, 200);
+//				teltext.setCursor(null);
+//				teltext.setEditable(false);
+//				teltext.setBackground(new Color(40, 38, 38));
+//				teltext.setText(tel);
+//				revalidate();
+//				repaint();
+//				
+//				panel01.remove(add_bt4);
+//				panel01.remove(cancel_bt4);
+//				panel01.add(change_bt4);
+//				change_bt4.setSize(75, 43);
+//				change_bt4.setLocation(420, 200);
+//				addresstext.setCursor(null);
+//				addresstext.setEditable(false);
+//				addresstext.setBackground(new Color(40, 38, 38));
+//				addresstext.setText(address);
+//			
+//				revalidate();
+//				repaint();
+//		}
 }

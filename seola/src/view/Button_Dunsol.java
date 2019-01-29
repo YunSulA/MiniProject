@@ -73,16 +73,16 @@ public class Button_Dunsol  extends JButton implements ActionListener{
 						if (i < 40) {
 							if (i >= 2 && !(i % 4 == 0)) {
 								Dunsol.setIcon(img[7]);
-								moveButton(new Point(point.x -= 7, point.y));
+								moveButton(new Point(point.x -= 1, point.y));
 
 							}
 							if (i % 2 == 1) {
 								Dunsol.setIcon(img[6]);
-								moveButton(new Point(point.x -= 7, point.y));
+								moveButton(new Point(point.x -= 1, point.y));
 							}
 							if (i >= 4 && i % 4 == 0) {
 								Dunsol.setIcon(img[8]);
-								moveButton(new Point(point.x -= 7, point.y));
+								moveButton(new Point(point.x -= 1, point.y));
 							}
 
 						} else if (i >= 40) {
@@ -112,6 +112,8 @@ public class Button_Dunsol  extends JButton implements ActionListener{
 								uipanel01_1.addresstext.setText(Academy_DAO.selectaddress);
 								uipanel01_2.majortext.setText(Academy_DAO.selectmajor);
 								uipanel01_2.tributetext.setText(Academy_DAO.selecttribute);
+								uipanel01_2.itcourseBoolean();
+								uipanel01_2.itcourseSave();
 
 							}
 				

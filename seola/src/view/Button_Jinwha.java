@@ -1,9 +1,10 @@
 package view;
 
-import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,9 +23,9 @@ public class Button_Jinwha extends JButton implements ActionListener {
 			new ImageIcon("img//Jinwha_charfront_walk2.png"), new ImageIcon("img//Jinwha_charLeft.png"),
 			new ImageIcon("img//Jinwha_charLeft_walk1.png"), new ImageIcon("img//Jinwha_charLeft_walk2.png"),
 			new ImageIcon("img//Jinwha_charRight.png"), new ImageIcon("img//Jinwha_charRihgt_walk1.png"),
-			new ImageIcon("img//Jinwha_charRigth_walk2.png"), new ImageIcon("img//Jinwha_charfront_roll.png")
-			, new ImageIcon("img//Jinwha_chair.png")};
-	
+			new ImageIcon("img//Jinwha_charRigth_walk2.png"), new ImageIcon("img//Jinwha_charfront_roll.png"),
+			new ImageIcon("img//Jinwha_chair.png") };
+
 	static JButton jinwha = new JButton(img[13]);
 	int x, y;
 	Thread t;
@@ -33,8 +34,11 @@ public class Button_Jinwha extends JButton implements ActionListener {
 	Academy_DAO_select select = new Academy_DAO_select();
 	Academy academy;
 	UiPanel01_1 uipanel01_1 = new UiPanel01_1();
-	UiPanel01_2 uipanel01_2 = new UiPanel01_2();
+	static UiPanel01_2 uipanel01_2 = new UiPanel01_2();
 	static boolean move = false;
+	static List<String> itcourselist = new ArrayList<String>();
+	static int j = 0;
+	static String itcourses = ""; // 초기 널값대신 넣어줌
 
 	// 목표 좌표 625 180
 
@@ -110,20 +114,16 @@ public class Button_Jinwha extends JButton implements ActionListener {
 								Academy academy = new Academy();
 								Service_select serSelect = Service_select.getInstance();
 								serSelect.select(academy);
-								
 								uipanel01_1.nametext.setText(Academy_DAO.selectname);
-								uipanel01_1.birthtext.setText(" " + Academy_DAO.selectbirth);
+								uipanel01_1.birthtext.setText( Academy_DAO.selectbirth);
 								uipanel01_1.teltext.setText(Academy_DAO.selecttel);
-								uipanel01_1.addresstext.setText("    " + Academy_DAO.selectaddress);
+								uipanel01_1.addresstext.setText( Academy_DAO.selectaddress);
 								uipanel01_2.majortext.setText(Academy_DAO.selectmajor);
-								uipanel01_2.tributetext.setText(Academy_DAO.selecttribute);
-
+								uipanel01_2.tributetext.setText(Academy_DAO.selecttribute);	
+								uipanel01_2.itcourseBoolean();
+								uipanel01_2.itcourseSave();
+								
 							}
-							
-							 
-							 
-							
-							
 
 						}
 						Thread.sleep(delay);
@@ -151,6 +151,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 						if (i < 35) {
 							if (i >= 2 && !(i % 4 == 0)) {
 								jinwha.setIcon(img[4]);
+								
 								moveButton(new Point(point.x, point.y += 7));
 							}
 							if (i % 2 == 1) {
@@ -167,7 +168,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 								jinwha.setIcon(img[7]);
 								moveButton(new Point(point.x -= 7, point.y));
 							}
-							if (i % 2 == 1 ) {
+							if (i % 2 == 1) {
 								jinwha.setIcon(img[6]);
 								moveButton(new Point(point.x -= 7, point.y));
 							}
@@ -179,7 +180,7 @@ public class Button_Jinwha extends JButton implements ActionListener {
 								jinwha.setIcon(img[13]);
 								MainView.click = 0;
 								moveButton(new Point(135, 540));
-								
+
 							}
 
 						}
@@ -205,20 +206,15 @@ public class Button_Jinwha extends JButton implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(MainView.click == 0) {
-		move();
-		MainView.click = sno;	//캐릭터가 움직이고있는지 여부(움직이고있으면 다른캐릭터 클릭불가)
-		UiChange_Out.sno = sno;//Ui가 닫히고 돌아갈 캐릭터의 sno 저장
-		Academy.button_check = sno;//버튼을 눌렀는지 여부
+		if (MainView.click == 0) {
+			move();
+			MainView.click = sno; // 캐릭터가 움직이고있는지 여부(움직이고있으면 다른캐릭터 클릭불가)
+			UiChange_Out.sno = sno;// Ui가 닫히고 돌아갈 캐릭터의 sno 저장
+			Academy.button_check = sno;// 버튼을 눌렀는지 여부
 		}
-		
+
 	}
-	
-	
-	public void select() {
-		
-	}
-	
+
 
 	public JButton getButton() {
 		return jinwha;

@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -23,15 +24,24 @@ public class MainView extends JFrame implements ActionListener {
 	JButton dunsol = Dunsol.getButton();
 	Button_JungHun JungHun = new Button_JungHun();
 	JButton junghun = JungHun.getButton();
+	Button_Gyeom Gyeom = new Button_Gyeom();
+	JButton gyeom = Gyeom.getButton();
 	JFrame frame = new JFrame("박성정 선생님 취업반");
+	static Move btall = new Move();
+	List<JButton> btlist = btall.getButton();
+	//JButton all = btall.getButton();
 	private JPanel panel = new MyPanel();
 	static int f_width = 1250;
 	static int f_height = 950;
-
+	JButton choice = new JButton();
+	JButton blackboard = new JButton();
+	
+	
 	MainView() {
 		Dimension screen = tk.getScreenSize();
 		int f_xpos = (int) (screen.getWidth() / 2 - f_width / 2);
 		int f_ypos = (int) (screen.getHeight() / 2 - f_height / 2);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocation(f_xpos, f_ypos);
         frame.setLayout(null);
         frame.setSize(1250,930);
@@ -43,6 +53,15 @@ public class MainView extends JFrame implements ActionListener {
         panel.add(jinwha);
         panel.add(dunsol);
         panel.add(junghun);
+        panel.add(gyeom);
+        panel.add(blackboard);
+        blackboard.setSize(370,150);
+        blackboard.setLocation(450,20);
+       
+        
+        for(int i = 0; i < btlist.size(); i++) {
+        	panel.add(btlist.get(i));
+        }
  
 	}
           
@@ -64,6 +83,9 @@ public class MainView extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btlist.get(1)) {
+			
+		}
 	}
 }
 

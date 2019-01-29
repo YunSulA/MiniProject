@@ -41,7 +41,7 @@ public class Button_Guhyup extends JButton implements ActionListener {
 	UiChange_Out ui_unit;
 	Academy_DAO_select select = new Academy_DAO_select();
 	Academy academy;
-	UiPanel01_1 uipanel01_1 = new UiPanel01_1();
+	static UiPanel01_1 uipanel01_1 = new UiPanel01_1();
 	UiPanel01_2 uipanel01_2 = new UiPanel01_2();
 
 	// ±¸ÇùÁÂ¼® ÁÂÇ¥ 700 , 540
@@ -116,12 +116,15 @@ public class Button_Guhyup extends JButton implements ActionListener {
 								Academy academy = new Academy();
 								Service_select serSelect = Service_select.getInstance();
 								serSelect.select(academy);
+								
 								uipanel01_1.nametext.setText(Academy_DAO.selectname);
 								uipanel01_1.birthtext.setText(Academy_DAO.selectbirth);
 								uipanel01_1.teltext.setText(Academy_DAO.selecttel);
 								uipanel01_1.addresstext.setText(Academy_DAO.selectaddress);
 								uipanel01_2.majortext.setText(Academy_DAO.selectmajor);
 								uipanel01_2.tributetext.setText(Academy_DAO.selecttribute);
+								uipanel01_2.itcourseBoolean();
+								uipanel01_2.itcourseSave();
 
 							}
 							
@@ -180,8 +183,10 @@ public class Button_Guhyup extends JButton implements ActionListener {
 							}
 							if (i == 72) {
 								guhyup.setIcon(img[13]);
-								MainView.click = 0;
 								moveButton(new Point(953, 537));
+								MainView.click = 0;	
+								
+								
 
 							}
 

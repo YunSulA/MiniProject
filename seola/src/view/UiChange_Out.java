@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,8 +16,10 @@ public class UiChange_Out implements WindowListener {
 	static int f_width = 800;
 	static int f_height = 540;
 	static UiChange win;
-	static int sno;
+	static int sno = 0;
+	static Move btmove = new Move();
 
+	
 	public UiChange_Out() {
 
 		win = new UiChange();
@@ -47,7 +50,6 @@ public class UiChange_Out implements WindowListener {
 
 	@Override
 	public void windowActivated(WindowEvent e) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -56,15 +58,8 @@ public class UiChange_Out implements WindowListener {
 	// 종료하면 1번 캐릭터의 메소드 실행
 	@Override
 	public void windowClosed(WindowEvent e) {
-		if (sno == 1) {
-			Button_Guhyup.move2();
-		} else if (sno == 7) {
-			Button_Jinwha.move2();
-		}else if(sno == 8) {
-			Button_Dunsol.move2();
-		}else if(sno == 10) {
-			Button_JungHun.move2();
-		}
+		
+				Move.move2();
 
 	}
 
@@ -76,7 +71,7 @@ public class UiChange_Out implements WindowListener {
 
 	@Override
 	public void windowDeactivated(WindowEvent e) {
-		// TODO Auto-generated method stub
+	
 
 	}
 
@@ -94,8 +89,7 @@ public class UiChange_Out implements WindowListener {
 
 	@Override
 	public void windowOpened(WindowEvent e) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 }
